@@ -4,6 +4,7 @@ Wrapper on top of the AlgoliaSearch API client"""
 import time
 import meilisearch
 from builtins import range
+import pyhash
 
 def clean_one_field(value):
     if value is None:
@@ -31,13 +32,16 @@ def parse_record(record):
     for k, v in record['hierarchy_radio'].items():
         key = 'hierarchy_radio_' + k
         new_hierarchy_radio = {**{key: v}, **new_hierarchy_radio}
+    hasher = pyhash.fnv1_32()
+    new_record_url_hash = {}
+    new_record_url_hash['url_hash'] = hasher(record['url'])
     del record['weight']
     del record['hierarchy']
     del record['hierarchy_radio']
     del record['hierarchy_camel']
     del record['hierarchy_radio_camel']
     del record['content_camel']
-    return {**record, **new_weight, **new_hierarchy, **new_hierarchy_radio}
+    return {**record, **new_weight, **new_hierarchy, **new_hierarchy_radio, **new_record_url_hash}
 
 class MeiliSearchHelper:
     """MeiliSearchHelper"""
@@ -54,7 +58,7 @@ class MeiliSearchHelper:
             "level",
             "position"
         ],
-        "distinctField": "url",
+        "distinctField": "url_hash",
         "rankingRules": {
             "page_rank": "dsc",
             "level": "dsc",
@@ -96,6 +100,7 @@ class MeiliSearchHelper:
         base_schema = {
             'anchor':    ['displayed'],
             'url':       ['displayed'],
+            'url_hash':  ['displayed', 'ranked'],
             'content':   ['indexed', 'displayed'],
             'objectID':  ['identifier', 'indexed', 'displayed'],
             'page_rank': ['indexed', 'ranked'],
