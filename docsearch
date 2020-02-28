@@ -1,0 +1,5 @@
+#! /usr/bin/env python
+
+from cli.src.index import run
+
+run()

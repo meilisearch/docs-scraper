@@ -1,0 +1,21 @@
+.DS_Store
+crawling_data
+node_modules
+checker/node_modules
+.cache
+src/__pycache__/
+src/strategies/__pycache__/
+*.pyc
+.env
+update.sh
+
+*yarn.lock
+
+# IDE Files
+.idea/
+*.iml
+geckodriver.log
+.vscode/
+
+configs/public
+configs/private

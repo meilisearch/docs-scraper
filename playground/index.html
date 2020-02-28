@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>DocSearch playground</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+</head>
+<body>
+<div id="playground" ng-app="playground" ng-controller="PlaygroundController">
+    <div>
+        <div class="col-md-9 left-panel">
+            <div class="input-group">
+                <div id=""></div>
+                <input type="search" class="form-control" id="q">
+                <span class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+            </div>
+        </div>
+        <div class="col-md-3 right-panel">
+            <div class="form-group">
+                <input type="radio" ng-model="config.env" value="prod" name="prod"/>
+                <span>Prod</span>
+                <input type="radio" ng-model="config.env" value="dev" name="prod"/>
+                <span>Dev</span>
+            </div>
+            <div class="form-group">
+                <label for="appId">App Id</label>
+                <input ng-model="config[config.env].appId" id="appId" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="apiKey"><b>Admin</b> Api Key</label>
+                <input type="password" ng-model="config[config.env].apiKey" id="apiKey" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="indexName">Index Name</label>
+                <input ng-model="config[config.env].indexName" id="indexName" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="loader">Load config</label>
+                <select ng-model="config[config.env].indexName" ng-options="value for value in indices"
+                        ng-change="selectedIndexChanged()" class="form-control" id="loader"></select>
+            </div>
+            <div class="form-group">
+                <label for="facetFilters">Facet Filters</label>
+                <input ng-model="config[config.env].facetFilters" id="facetFilters" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="optionalFacetFilters">Optional Facet Filters</label>
+                <input ng-model="config[config.env].optionalFacetFilters" id="optionalFacetFilters"
+                       class="form-control"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/angularjs/1.4.7/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/algoliasearch/3.10.2/algoliasearch.min.js"></script>
+
+<script type="text/javascript">
+            var playground = angular.module("playground", []);
+
+            playground.controller("PlaygroundController", function ($scope) {
+                $scope.config = {
+                    env: 'dev',
+                    dev: {
+                        appId: '',
+                        apiKey: '',
+                        indexName: '',
+                        inputSelector: '#q',
+                        autocompleteOptions: {
+                            debug: "true"
+                        },
+                        facetFilters: '',
+                        optionalFacetFilters: ''
+                    },
+                    prod: {
+                        appId: '',
+                        apiKey: '',
+                        indexName: '',
+                        inputSelector: '#q',
+                        autocompleteOptions: {
+                            debug: "true"
+                        },
+                        facetFilters: '',
+                        optionalFacetFilters: ''
+                    }
+                };
+
+                $scope.selectedIndexChanged = function(){
+                        setTimeout(function(){jQuery('input#q').focus();}, 50);
+                };
+
+                $scope.indices = [];
+
+                var docSearch = undefined;
+                var client;
+
+                if (localStorage && localStorage['config']) {
+                    $scope.config = JSON.parse(localStorage['config']);
+                }
+
+                var initDocSearch = function (first_time) {
+                    if (!first_time) {
+                        localStorage['config'] = JSON.stringify($scope.config);
+                    }
+
+                    $scope.config[$scope.config.env].algoliaOptions = {
+                        'hitsPerPage': 5,
+                        'facetFilters': $scope.config[$scope.config.env].facetFilters,
+                        'optionalFacetFilters': $scope.config[$scope.config.env].optionalFacetFilters
+                    };
+
+                    if ($scope.config[$scope.config.env].appId && $scope.config[$scope.config.env].apiKey && $scope.config[$scope.config.env].indexName) {
+                        if (docSearch !== undefined) {
+                            jQuery('.algolia-autocomplete').remove();
+                            jQuery('.input-group').prepend('<input type="search" class="form-control" id="q">');
+                        }
+
+                        docSearch = docsearch($scope.config[$scope.config.env], {debug: true});
+                    }
+
+                    if ($scope.config[$scope.config.env].appId != '' && $scope.config[$scope.config.env].apiKey != '') {
+                        client = algoliasearch($scope.config[$scope.config.env].appId, $scope.config[$scope.config.env].apiKey, {
+                          protocol: 'https:'
+                        });
+
+                        client.listIndexes(function(err, content) {
+                            if (err) {
+                                $scope.indices = [];
+                            }
+                            else {
+                                $scope.indices = content.items.map(function (item) {
+                                    return item.name;
+                                });
+                            }
+                            $scope.$apply();
+
+                        });
+                    }
+
+                    if (first_time) {
+                        jQuery('input#q').focus();
+                    }
+                };
+
+                var values = [
+                    'config.env',
+                    'config.dev.appId', 'config.dev.apiKey', 'config.dev.indexName', 'config.dev.facetFilters', 'config.dev.optionalFacetFilters',
+                    'config.prod.appId', 'config.prod.apiKey', 'config.prod.indexName', 'config.prod.facetFilters', 'config.prod.optionalFacetFilters'
+                ];
+
+                angular.forEach(values, function(value, key) {
+                    $scope.$watch(value, function(newValue, oldValue) {
+                        if (newValue != oldValue) {
+                            initDocSearch();
+                        }
+                    });
+                });
+
+                initDocSearch(true);
+            });
+
+
+</script>
+
+<style>
+            body
+            {
+                margin: 0px;
+                background-color: #FAFAFA;
+            }
+            .input-group
+            {
+                width: 600px;
+                margin: auto;
+            }
+
+            .right-panel
+            {
+                background-color: #FAFAFA;
+                height: 100%;
+                position: absolute;
+                right: 0px;
+                border-left: solid 1px #DDD;
+                padding-top: 100px;
+            }
+
+            .left-panel
+            {
+                padding-top: 100px;
+            }
+
+</style>
+</body>
+</html>
