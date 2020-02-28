@@ -8,6 +8,9 @@ _Will be generalized soon for all documentations_
 
 This project supports Python 3.6+.
 
+Set both environment variables `APPLICATION_ID` and `API_KEY`.
+
+Then, run:
 ```bash
 $ pipenv install
 $ pipenv shell

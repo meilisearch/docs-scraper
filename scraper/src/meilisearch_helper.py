@@ -45,10 +45,10 @@ class MeiliSearchHelper:
     # Go to the end of this file to understand criteria order
     SETTINGS = {
         "rankingOrder": [
-            "_number_of_words",
-            "_sum_of_typos",
-            "_sum_of_words_attribute",
-            "_word_proximity",
+            "_words",
+            "_typo",
+            "_attribute",
+            "_proximity",
             "_exact",
             "page_rank",
             "level",
