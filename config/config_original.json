@@ -6,7 +6,7 @@
   "stop_urls": [],
   "selectors": {
     "lvl0": {
-      "selector": ".sidebar-heading.open",
+      "selector": "p.sidebar-heading.open",
       "global": true,
       "default_value": "Documentation"
     },
@@ -19,7 +19,8 @@
     "lang": {
       "selector": "/html/@lang",
       "type": "xpath",
-      "global": true
+      "global": true,
+      "default_value": "en-US"
     }
   },
   "selectors_exclude": [
@@ -31,6 +32,9 @@
       "lang"
     ]
   },
-  "scrap_start_urls": true,
-  "nb_hits": 920
+  "conversation_id": [
+    "1067906698"
+  ],
+  "scrap_start_urls": false,
+  "nb_hits": 898
 }
