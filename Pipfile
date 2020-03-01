@@ -14,7 +14,7 @@ pytest = "==3.10.0"
 requests-iap = "==0.2.0"
 python-helpscout-v2 = "==1.0.1"
 meilisearch = "*"
-pyhash = "*"
+# pyhash = "*"
 
 [dev-packages]
 pylint = "==2.3.1"
