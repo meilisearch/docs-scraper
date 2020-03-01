@@ -6,11 +6,16 @@ import meilisearch
 from builtins import range
 import pyhash
 
+def remove_bad_encoding(value):
+    return value.replace('&#x27;', "'")
+
 def clean_one_field(value):
     if value is None:
         return 'null'
     elif isinstance(value, bool):
         return str(value)
+    elif isinstance(value, str):
+        return remove_bad_encoding(value)
     return value
 
 def clean_dict(record):
