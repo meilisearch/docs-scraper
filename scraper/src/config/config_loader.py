@@ -28,8 +28,8 @@ class ConfigLoader:
     app_id = None
     custom_settings = None
     extra_records = []
-    index_name = None
-    index_name_tmp = None
+    index_uid = None
+    index_uid_tmp = None
     js_wait = 0
     js_render = False
     keep_tags = []
@@ -47,7 +47,7 @@ class ConfigLoader:
     strip_chars = u".,;:§¶"
     update_nb_hits = None
     use_anchors = False
-    user_agent = 'Algolia DocSearch Crawler'
+    user_agent = 'MeiliSearch docs-scraper'
     only_content_level = False
     query_rules = []
 
@@ -108,13 +108,13 @@ class ConfigLoader:
 
     def _parse(self):
         # Parse Env
-        self.app_id = os.environ.get('APPLICATION_ID', None)
-        self.api_key = os.environ.get('API_KEY', None)
+        self.app_id = os.environ.get('MEILISEARCH_HOST_URL', None)
+        self.api_key = os.environ.get('MEILISEARCH_API_KEY', None)
         self.update_nb_hits = os.environ.get('UPDATE_NB_HITS', None)
         if self.update_nb_hits is not None:
             self.update_nb_hits = bool(strtobool(self.update_nb_hits))
-        if self.index_name_tmp is None:
-            self.index_name_tmp = os.environ.get('INDEX_NAME_TMP', self.index_name + '_tmp')
+        if self.index_uid_tmp is None:
+            self.index_uid_tmp = os.environ.get('index_uid_TMP', self.index_uid + '_tmp')
 
         # Parse config
         self.selectors = SelectorsParser().parse(self.selectors)

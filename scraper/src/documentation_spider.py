@@ -24,8 +24,8 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
     """
     DocumentationSpider
     """
-    http_user = os.environ.get('DOCSEARCH_BASICAUTH_USERNAME', None)
-    http_pass = os.environ.get('DOCSEARCH_BASICAUTH_PASSWORD', None)
+    http_user = os.environ.get('DOCS_SCRAPER_BASICAUTH_USERNAME', None)
+    http_pass = os.environ.get('DOCS_SCRAPER_BASICAUTH_PASSWORD', None)
     meilisearch_helper = None
     strategy = None
     js_render = False
@@ -64,7 +64,7 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
 
     def __init__(self, config, meilisearch_helper, strategy, *args, **kwargs):
         # Scrapy config
-        self.name = config.index_name
+        self.name = config.index_uid
         self.allowed_domains = config.allowed_domains
         self.start_urls_full = config.start_urls
         self.start_urls = [start_url['url'] for start_url in config.start_urls]
@@ -153,7 +153,7 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
         # Arbitrary limit
         if self.nb_hits_max > 0 and DocumentationSpider.NB_INDEXED > self.nb_hits_max:
             DocumentationSpider.NB_INDEXED = 0
-            self.reason_to_stop = "Too much hits, DocSearch only handle {} records".format(
+            self.reason_to_stop = "Too much hits, Docs-Scraper only handle {} records".format(
                 int(self.nb_hits_max))
             raise ValueError(self.reason_to_stop)
             exit(EXIT_CODE_EXCEEDED_RECORDS)

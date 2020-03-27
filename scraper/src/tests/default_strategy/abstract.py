@@ -27,7 +27,7 @@ def get_strategy(config=None):
         'app_id': 'test',
         'custom_settings': None,
         'hash_strategy': 'test',
-        'index_name': 'test',
+        'index_uid': 'test',
         'selectors': SELECTORS,
         'selectors_exclude': 'test',
         'start_urls': ['test'],

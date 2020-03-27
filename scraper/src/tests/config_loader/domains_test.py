@@ -24,7 +24,7 @@ class TestDomains:
         # Given
         c = config({
             'start_urls': ['http://www.foo.bar/'],
-            'stop_urls': ['http://www.algolia.com/'],
+            'stop_urls': ['http://www.meilisearch.com/'],
             'allowed_domains': None
         })
 
@@ -32,7 +32,7 @@ class TestDomains:
         actual = ConfigLoader(c)
 
         # Then
-        assert actual.allowed_domains == ['www.foo.bar', 'www.algolia.com']
+        assert actual.allowed_domains == ['www.foo.bar', 'www.meilisearch.com']
 
     def test_allowed_domains_unique(self):
         """ Should populate a list of unique domains """
@@ -40,7 +40,7 @@ class TestDomains:
         c = config({
             'start_urls': ['http://www.foo.bar/'],
             'stop_urls': [
-                'http://www.algolia.com/',
+                'http://www.meilisearch.com/',
                 'http://www.foo.bar/'
             ],
             'allowed_domains': None
@@ -50,7 +50,7 @@ class TestDomains:
         actual = ConfigLoader(c)
 
         # Then
-        assert actual.allowed_domains == ['www.foo.bar', 'www.algolia.com']
+        assert actual.allowed_domains == ['www.foo.bar', 'www.meilisearch.com']
 
     def test_not_allowed_domains_accept_single_value(self):
         """ Should allow passing allowed_domains as a string instead of an array

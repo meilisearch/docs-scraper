@@ -1,7 +1,5 @@
-from ..helpers import confirm
 import json
 import copy
-import sys
 
 
 class NbHitsUpdater:

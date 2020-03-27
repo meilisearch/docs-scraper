@@ -1,9 +1,0 @@
-## RUN THE DEPLOYER
-
-```
-APP_ID="" \
-API_KEY="" \
-WEBSITE_USERNAME="" \
-WEBSITE_PASSWORD="" \
-./deploy
-```
