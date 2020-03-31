@@ -1,10 +1,8 @@
 """MeiliSearchHelper
-Wrapper on top of the AlgoliaSearch API client"""
+Wrapper on top of the MeiliSearch API client"""
 
-import time
 import meilisearch
 from builtins import range
-# import pyhash
 
 def remove_bad_encoding(value):
     return value.replace('&#x27;', "'")
@@ -37,9 +35,6 @@ def parse_record(record):
     for k, v in record['hierarchy_radio'].items():
         key = 'hierarchy_radio_' + k
         new_hierarchy_radio = {**{key: v}, **new_hierarchy_radio}
-    # hasher = pyhash.fnv1_32()
-    # new_record_url_hash = {}
-    # new_record_url_hash['url_hash'] = hasher(record['url'])
     del record['weight']
     del record['hierarchy']
     del record['hierarchy_radio']
@@ -47,81 +42,93 @@ def parse_record(record):
     del record['hierarchy_radio_camel']
     del record['content_camel']
     return {**record, **new_weight, **new_hierarchy, **new_hierarchy_radio}
-    # return {**record, **new_weight, **new_hierarchy, **new_hierarchy_radio, **new_record_url_hash}
 
 class MeiliSearchHelper:
     """MeiliSearchHelper"""
 
-    # Go to the end of this file to understand criteria order
+    # Cf the end of this file to understand these settings
     SETTINGS = {
-        "rankingOrder": [
-            "_words",
-            "_typo",
-            "_attribute",
-            "_proximity",
-            "_exact",
-            "page_rank",
-            "level",
-            "position"
+        'rankingRules': [
+            'words',
+            'typo',
+            'attribute',
+            'proximity',
+            'exactness',
+            'desc(page_rank)',
+            'desc(level)',
+            'asc(position)'
         ],
-        # "distinctField": "url_hash",
-        "rankingRules": {
-            "page_rank": "dsc",
-            "level": "dsc",
-            "position": "asc"
-        }
+        'distinctAttribute': 'url',
+        'searchableAttributes': [
+            'hierarchy_radio_lvl0',
+            'hierarchy_radio_lvl1',
+            'hierarchy_radio_lvl2',
+            'hierarchy_radio_lvl3',
+            'hierarchy_radio_lvl4',
+            'hierarchy_radio_lvl5',
+            'hierarchy_lvl0',
+            'hierarchy_lvl1',
+            'hierarchy_lvl2',
+            'hierarchy_lvl3',
+            'hierarchy_lvl4',
+            'hierarchy_lvl5',
+            'hierarchy_lvl6',
+            'content',
+            'objectID',
+            'page_rank',
+            'level',
+            'position'
+        ],
+        'displayedAttributes': [
+            'hierarchy_radio_lvl0',
+            'hierarchy_radio_lvl1',
+            'hierarchy_radio_lvl2',
+            'hierarchy_radio_lvl3',
+            'hierarchy_radio_lvl4',
+            'hierarchy_radio_lvl5',
+            'hierarchy_lvl0',
+            'hierarchy_lvl1',
+            'hierarchy_lvl2',
+            'hierarchy_lvl3',
+            'hierarchy_lvl4',
+            'hierarchy_lvl5',
+            'hierarchy_lvl6',
+            'anchor',
+            'url',
+            'content',
+            'objectID'
+        ],
+        'acceptNewFields': False
     }
 
-    def __init__(self, app_id, api_key, index_uid):
-        self.meilisearch_client = meilisearch.Client("https://" + app_id + ".getmeili.com" , api_key)
-        self.index_uid = index_uid
-        self.meilisearch_index = self.meilisearch_client.get_index(self.index_uid)
-        self.meilisearch_index.add_settings(MeiliSearchHelper.SETTINGS)
-        self.schema_added = False
-        if len(self.meilisearch_index.get_documents({"limit": 10})) != 0:
-            print('Schema already added')
-            self.schema_added = True
-        self.meilisearch_index.delete_all_documents()
+    def __init__(self, host_url, api_key, index_uid):
+        self.meilisearch_client = meilisearch.Client(host_url, api_key)
+        self.__delete_and_create_index(index_uid)
+        self.meilisearch_index = self.__delete_and_create_index(index_uid)
+        self.meilisearch_index.update_settings(MeiliSearchHelper.SETTINGS)
 
     def add_records(self, records, url, from_sitemap):
-        """Add new records to the temporary index"""
+        """Add new records to the index"""
 
         record_count = len(records)
         for i in range(0, record_count, 50):
             parsed_records = list(map(parse_record, records[i:i + 50]))
-            if self.schema_added == False:
-                print('Updating schema...')
-                self.update_schema_based_on(parsed_records[i])
-                self.schema_added = True
             cleaned_records = list(map(clean_dict, parsed_records))
             self.meilisearch_index.add_documents(cleaned_records)
 
         color = "96" if from_sitemap else "94"
 
         print(
-            '\033[{}m> DocSearch: \033[0m{}\033[93m {} records\033[0m)'.format(
+            '\033[{}m> Docs-Scraper: \033[0m{}\033[93m {} records\033[0m)'.format(
                 color, url, record_count))
 
-    def update_schema_based_on(self, record):
-        base_schema = {
-            'anchor':    ['displayed'],
-            'url':       ['displayed'],
-            # 'url_hash':  ['displayed', 'ranked'],
-            'content':   ['indexed', 'displayed'],
-            'objectID':  ['identifier', 'indexed', 'displayed'],
-            'page_rank': ['indexed', 'ranked'],
-            'level':     ['indexed', 'ranked'],
-            'position':  ['indexed', 'ranked']
-        }
-        hierarchy_radio_schema = {}
-        hierarchy_schema = {}
-        for k, v in record.items():
-            if k.startswith('hierarchy_radio_'):
-                hierarchy_radio_schema[k] = ['indexed']
-            elif k.startswith('hierarchy_'):
-                hierarchy_schema[k] = ['indexed', 'displayed']
-        schema = {**hierarchy_radio_schema, **hierarchy_schema, **base_schema}
-        self.meilisearch_index.update_schema(schema)
+    def __delete_and_create_index(self, index_uid):
+        try:
+            self.meilisearch_client.get_index(index_uid).delete()
+        except Exception:
+            print("The index " + index_uid + " does not exist. Creating...")
+
+        return self.meilisearch_client.create_index(uid=index_uid, primary_key='objectID')
 
 # Algolia's settings:
     # {"minWordSizefor1Typo"=>3,

@@ -1,5 +1,5 @@
 """
-DocSearch scraper main entry point
+Docs-scraper main entry point
 """
 import os
 import json
@@ -15,7 +15,6 @@ from .strategies.default_strategy import DefaultStrategy
 from .custom_downloader_middleware import CustomDownloaderMiddleware
 from .custom_dupefilter import CustomDupeFilter
 from .config.browser_handler import BrowserHandler
-# from .strategies.algolia_settings import AlgoliaSettings
 from .scrapy_patch import CustomContextFactory
 
 try:
@@ -40,9 +39,7 @@ def run_config(config):
     meilisearch_helper = MeiliSearchHelper(
         config.app_id,
         config.api_key,
-        config.index_name,
-        # AlgoliaSettings.get(config, strategy.levels),
-        # config.query_rules
+        config.index_uid,
     )
 
     root_module = 'src.' if __name__ == '__main__' else 'scraper.src.'
@@ -109,7 +106,7 @@ def run_config(config):
         print('Nb hits: {}'.format(DocumentationSpider.NB_INDEXED))
         config.update_nb_hits_value(DocumentationSpider.NB_INDEXED)
     else:
-        print('Crawling issue: nbHits 0 for ' + config.index_name)
+        print('Crawling issue: nbHits 0 for ' + config.index_uid)
         # meilisearch_helper.report_crawling_issue()
         exit(EXIT_CODE_NO_RECORD)
     print("")

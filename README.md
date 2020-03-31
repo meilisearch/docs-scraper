@@ -8,13 +8,13 @@ _Will be generalized soon for all documentations_
 
 This project supports Python 3.6+.
 
-Set both environment variables `APPLICATION_ID` and `API_KEY`.
+Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
 
 Then, run:
 ```bash
 $ pipenv install
 $ pipenv shell
-$ ./docsearch run config/config.json
+$ ./docs_scraper run config/config.json
 ```
 
 _WIP_

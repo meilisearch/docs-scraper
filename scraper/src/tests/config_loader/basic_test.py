@@ -15,11 +15,11 @@ class TestInit:
         with pytest.raises(ValueError):
             ConfigLoader(c)
 
-    def test_mandatory_index_name(self):
-        """ Should throw if no index_name passed """
+    def test_mandatory_index_uid(self):
+        """ Should throw if no index_uid passed """
         # Given
         c = config({
-            'index_name': None
+            'index_uid': None
         })
 
         # When / Then

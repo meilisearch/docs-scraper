@@ -1,0 +1,22 @@
+#! /usr/bin/env python
+
+import sys
+import os
+from scraper.src.index import run_config
+
+HOST_URL = os.environ.get('MEILISEARCH_HOST_URL')
+API_KEY = os.environ.get('MEILISEARCH_API_KEY')
+
+def usage():
+    return "Usage: ./docs_scraper <config-file>"
+
+if len(sys.argv) <= 1:
+    print("Error: missing config file.")
+    print(usage())
+    sys.exit(1)
+
+if HOST_URL is None or API_KEY is None:
+    print("Error: MEILISEARCH_HOST_URL and MEILISEARCH_API_KEY environment variables are required.")
+    sys.exit(1)
+
+run_config(sys.argv[1])

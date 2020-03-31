@@ -17,7 +17,7 @@ class TestMeta:
         strategy.dom = lxml.html.fromstring("""
         <html>
             <header>
-                <meta name="docsearch:extra" content='12'>
+                <meta name="docs-scraper:extra" content='12'>
             </header>
             <body>
                 <h1>Foo</h1>
@@ -52,7 +52,7 @@ class TestMeta:
         strategy.dom = lxml.html.fromstring("""
            <html>
                <header>
-                   <meta name="docsearch:extra" value='["ruby","rails","python","php","symfony","javascript","java","scala","go","csharp"]'>
+                   <meta name="docs-scraper:extra" value='["ruby","rails","python","php","symfony","javascript","java","scala","go","csharp"]'>
                </header>
                <body>
                    <h1>Foo</h1>
@@ -87,7 +87,7 @@ class TestMeta:
         strategy.dom = lxml.html.fromstring("""
            <html>
                <header>
-                   <meta name="docsearch:extra" content='["ruby","rails","python","php","symfony","javascript","java","scala","go","csharp"]'>
+                   <meta name="docs-scraper:extra" content='["ruby","rails","python","php","symfony","javascript","java","scala","go","csharp"]'>
                </header>
                <body>
                    <h1>Foo</h1>
@@ -134,7 +134,7 @@ class TestMeta:
         strategy.dom = lxml.html.fromstring("""
         <html>
             <header>
-                <meta name="docsearch:version" content='1.2.3'>
+                <meta name="docs-scraper:version" content='1.2.3'>
             </header>
             <body>
                 <h1>Foo</h1>
@@ -167,7 +167,7 @@ class TestMeta:
         strategy.dom = lxml.html.fromstring("""
         <html>
             <header>
-                <meta name="docsearch:version" content='1.0'>
+                <meta name="docs-scraper:version" content='1.0'>
             </header>
             <body>
                 <h1>Foo</h1>
@@ -200,7 +200,7 @@ class TestMeta:
         strategy.dom = lxml.html.fromstring("""
         <html>
             <header>
-                <meta name="docsearch:string" content='"ok"'>
+                <meta name="docs-scraper:string" content='"ok"'>
             </header>
             <body>
                 <h1>Foo</h1>

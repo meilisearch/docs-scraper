@@ -8,8 +8,8 @@ class ConfigValidator:
 
     def validate(self):
         """Check for all needed parameters in config"""
-        if not self.config.index_name:
-            raise ValueError('index_name is not defined')
+        if not self.config.index_uid:
+            raise ValueError('index_uid is not defined')
 
         # Start_urls is mandatory
         if not self.config.start_urls and not self.config.sitemap_urls:

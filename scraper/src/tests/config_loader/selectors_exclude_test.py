@@ -35,7 +35,7 @@ class TestSelectorsExclude:
             'allowed_domains': 'allowed_domains',
             'api_key': 'api_key',
             'app_id': 'app_id',
-            'index_name': 'index_name',
+            'index_uid': 'index_uid',
             'selectors': [],
             'start_urls': ['http://www.starturl.com/'],
             'stop_urls': ['http://www.stopurl.com/']

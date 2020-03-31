@@ -18,8 +18,8 @@ _WARNING:_ Please be aware that the scraper sends authentication headers to ever
 #### Basic HTTP:
 
 Basic HTTP authentication is supported by setting these environment variables:
-- `DOCSEARCH_BASICAUTH_USERNAME`
-- `DOCSEARCH_BASICAUTH_PASSWORD`
+- `DOCS_SCRAPER_BASICAUTH_USERNAME`
+- `DOCS_SCRAPER_BASICAUTH_PASSWORD`
 
 #### Cloudflare Access: Identity and Access Management
 

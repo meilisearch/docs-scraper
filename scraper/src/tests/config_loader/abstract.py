@@ -9,7 +9,7 @@ def config(additional_config={}):
         'app_id': 'app_id',
         'custom_settings': 'custom_settings',
         'hash_strategy': 'hash_strategy',
-        'index_name': 'index_name',
+        'index_uid': 'index_uid',
         'selectors': [],
         'selectors_exclude': [],
         'start_urls': ['http://www.starturl.com/'],
