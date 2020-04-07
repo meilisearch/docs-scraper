@@ -3,20 +3,13 @@
 A scraper for your documentation website, indexing the content into a MeiliSearch instance.
 
 - [Installation and Usage](#installation-and-usage)
-<<<<<<< HEAD
   - [From Source Code](#from-source-code)
-=======
-  - [From source code](#from-source-code)
->>>>>>> a0751550092b2ba1e88fed4ce3b8dbc6fea5d1e1
   - [With Docker](#with-docker)
   - [In a GitHub Action](#in-a-github-action)
   - [About the API Key](#about-the-api-key)
 - [Configuration file](#configuration-file)
 - [Related projects](#related-projects)
-<<<<<<< HEAD
 - [Development Workflow](#development-workflow)
-=======
->>>>>>> a0751550092b2ba1e88fed4ce3b8dbc6fea5d1e1
 - [Credits](#credits)
 
 
@@ -24,11 +17,7 @@ A scraper for your documentation website, indexing the content into a MeiliSearc
 
 This project supports Python 3.6+.
 
-<<<<<<< HEAD
 ### From Source Code
-=======
-### From source code
->>>>>>> a0751550092b2ba1e88fed4ce3b8dbc6fea5d1e1
 
 Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
 
@@ -46,7 +35,6 @@ $ docker run -t --rm \
     -e MEILISEARCH_API_KEY=<your-meilisearch-api-key> \
     -v <absolute-path-to-your-config-file>:/docs-scraper/config.json \
     getmeili/docs-scraper:v0.9.0 pipenv run ./docs_scraper config.json
-<<<<<<< HEAD
 ```
 
 ### In a GitHub Action
@@ -113,74 +101,6 @@ A generic configuration file:
 }
 ```
 
-=======
-```
-
-### In a GitHub Action
-
-To run after your deployment job:
-
-```yml
-run-scraper:
-    needs: <your-deployment-job>
-    runs-on: ubuntu-18.04
-    steps:
-    - uses: actions/checkout@master
-    - name: Run scraper
-      env:
-        HOST_URL: ${{ secrets.MEILISEARCH_HOST_URL }}
-        API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
-        CONFIG_FILE_PATH: <path-to-your-config-file>
-      run: |
-        docker run -t --rm \
-          -e MEILISEARCH_HOST_URL=$HOST_URL \
-          -e MEILISEARCH_API_KEY=$API_KEY \
-          -v $CONFIG_FILE_PATH:/docs-scraper/config.json \
-          getmeili/docs-scraper:v0.9.0 pipenv run ./docs_scraper config.json
-```
-
-Here is the [GitHub Action file](https://github.com/meilisearch/documentation/blob/master/.github/workflows/gh-pages-scraping.yml) we use in production for the MeiliSearch documentation.
-
-### About the API Key
-
-The API key you must provide as environment variable should have the permissions to add documents into your MeiliSearch instance.
-
-Thus, you need to provide the private key or the master key.
-
-_More about [MeiliSearch authentication](https://docs.meilisearch.com/guides/advanced_guides/authentication.html)._
-
-## Configuration file
-
-A generic configuration file:
-
-```json
-{
-  "index_uid": "docs",
-  "start_urls": ["https://www.example.com/doc/"],
-  "sitemap_urls": ["https://www.example.com/sitemap.xml"],
-  "stop_urls": [],
-  "selectors": {
-    "lvl0": {
-      "selector": ".docs-lvl0",
-      "global": true,
-      "default_value": "Documentation"
-    },
-    "lvl1": {
-      "selector": ".docs-lvl1",
-      "global": true,
-      "default_value": "Chapter"
-    },
-    "lvl2": ".docs-content .docs-lvl2",
-    "lvl3": ".docs-content .docs-lvl3",
-    "lvl4": ".docs-content .docs-lvl4",
-    "lvl5": ".docs-content .docs-lvl5",
-    "lvl6": ".docs-content .docs-lvl6",
-    "text": ".docs-content p, .docs-content li"
-  }
-}
-```
-
->>>>>>> a0751550092b2ba1e88fed4ce3b8dbc6fea5d1e1
 The scraper will focus on the highlighted information depending on your selectors.
 
 Here is the [configuration file](https://github.com/meilisearch/documentation/blob/master/.vuepress/scraper/config.json) we use for the MeiliSearch documentation.
@@ -190,7 +110,6 @@ Here is the [configuration file](https://github.com/meilisearch/documentation/bl
 After having crawled your documentation, you might need a search bar to improve your user experience!
 
 For the front part, check out the [docs-searchbar.js repository](https://github.com/meilisearch/docs-searchbar.js), wich provides a front-end search bar adapted for documentation.
-<<<<<<< HEAD
 
 ## Development Workflow
 
@@ -216,8 +135,6 @@ $ git push --tag origin master
 ```
 
 A GitHub Action will be triggered and push the `latest` and `vX.X.X` version of Docker image on [DockerHub](https://hub.docker.com/repository/docker/getmeili/docs-scraper)
-=======
->>>>>>> a0751550092b2ba1e88fed4ce3b8dbc6fea5d1e1
 
 ## Credits
 
