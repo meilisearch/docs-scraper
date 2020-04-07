@@ -8,7 +8,7 @@ A scraper for your documentation website, indexing the content into a MeiliSearc
   - [In a GitHub Action](#in-a-github-action)
   - [About the API Key](#about-the-api-key)
 - [Configuration file](#configuration-file)
-- [Related projects](#related-projects)
+- [And for the search bar?](#and-for-the-search-bar)
 - [Development Workflow](#development-workflow)
 - [Credits](#credits)
 
@@ -105,7 +105,7 @@ The scraper will focus on the highlighted information depending on your selector
 
 Here is the [configuration file](https://github.com/meilisearch/documentation/blob/master/.vuepress/scraper/config.json) we use for the MeiliSearch documentation.
 
-## Related projects
+## And for the search bar?
 
 After having crawled your documentation, you might need a search bar to improve your user experience!
 
