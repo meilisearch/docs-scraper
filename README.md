@@ -1,6 +1,6 @@
 # Docs Scraper <!-- omit in TOC -->
 
-A scraper for your documentation website, indexing the content into a MeiliSearch instance.
+A scraper for your documentation website that indexes the scraped content into a MeiliSearch instance.
 
 - [Installation and Usage](#installation-and-usage)
   - [From Source Code](#from-source-code)
