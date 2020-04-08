@@ -163,8 +163,8 @@ class DefaultStrategy(AbstractStrategy):
             for meta_node in self.select('//meta'):
                 name = meta_node.get('name')
                 content = meta_node.get('content')
-                if name and name.startswith('docsearch:') and content:
-                    name = name.replace('docsearch:', '')
+                if name and name.startswith('docs-scraper:') and content:
+                    name = name.replace('docs-scraper:', '')
                     jsonized = to_json(content)
                     if jsonized:
                         record[name] = jsonized
