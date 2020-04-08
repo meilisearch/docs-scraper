@@ -123,6 +123,16 @@ $ pipenv install
 $ pipenv run ./docs_scraper run <path-to-your-config-file>
 ```
 
+### Linter and Tests <!-- omit in TOC -->
+
+```bash
+$ pipenv install --dev
+# Linter
+$ pipenv run pylint scraper
+# Tests
+$ pipenv run pytest ./scraper/src -k "not _browser"
+```
+
 ### Release <!-- omit in TOC -->
 
 Once the changes are merged on `master`, in your terminal, you must be on the `master` branch and push a new tag with the right version:
