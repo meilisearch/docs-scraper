@@ -9,6 +9,8 @@ A scraper for your documentation website that indexes the scraped content into a
   - [About the API Key](#about-the-api-key)
 - [Configuration file](#configuration-file)
 - [And for the search bar?](#and-for-the-search-bar)
+- [Authentication](#authentication)
+- [Installing Chrome Headless](#installing-chrome-headless)
 - [Development Workflow](#development-workflow)
 - [Credits](#credits)
 
@@ -18,6 +20,8 @@ A scraper for your documentation website that indexes the scraped content into a
 This project supports Python 3.6+.
 
 ### From Source Code
+
+The [`pipenv` command](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) must be installed.
 
 Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
 
@@ -111,9 +115,36 @@ After having crawled your documentation, you might need a search bar to improve 
 
 For the front part, check out the [docs-searchbar.js repository](https://github.com/meilisearch/docs-searchbar.js), wich provides a front-end search bar adapted for documentation.
 
+## Authentication
+
+__WARNING:__ Please be aware that the scraper will send authentication headers to every scraped site, so use `allowed_domains` to adjust the scope accordingly!
+
+### Basic HTTP <!-- omit in TOC -->
+
+Basic HTTP authentication is supported by setting these environment variables:
+- `DOCS_SCRAPER_BASICAUTH_USERNAME`
+- `DOCS_SCRAPER_BASICAUTH_PASSWORD`
+
+### Cloudflare Access: Identity and Access Management <!-- omit in TOC -->
+
+If it happens to you to scrape sites protected by Cloudflare Access, you have to set appropriate HTTP headers.
+
+Values for these headers are taken from env variables `CF_ACCESS_CLIENT_ID` and `CF_ACCESS_CLIENT_SECRET`.
+
+In case of Google Cloud Identity-Aware Proxy, please specify these env variables:
+- `IAP_AUTH_CLIENT_ID` - # pick [client ID of the application](https://console.cloud.google.com/apis/credentials) you are connecting to
+- `IAP_AUTH_SERVICE_ACCOUNT_JSON` - # generate in [Actions](https://console.cloud.google.com/iam-admin/serviceaccounts) -> Create key -> JSON
+
+## Installing Chrome Headless
+
+Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
+[Download the version](http://chromedriver.chromium.org/downloads) suited to your OS and then set the environment variable `CHROMEDRIVER_PATH`.
+
 ## Development Workflow
 
 ### Install and Launch <!-- omit in TOC -->
+
+The [`pipenv` command](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) must be installed.
 
 Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
 
