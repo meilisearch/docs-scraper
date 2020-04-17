@@ -27,12 +27,12 @@ This scraper is used in production and crawls the [MeiliSearch documentation](ht
 
 ### Run your MeiliSearch Instance
 
-First of all, you need to run your own MeiliSearch instance. Indeed, the scraper will crawl your website and automatically fill the content into it.<br>
+First of all, you need to run your own MeiliSearch instance. This scraper will crawl your website and automatically index its content in MeiliSearch.<br>
 MeiliSearch is open-source and can run on your own server! 😄
 
 **Without running a MeiliSearch instance, the scraper will not work.**
 
-Here is the [documentation to install and run MeiliSearch](https://docs.meilisearch.com/guides/advanced_guides/installation.html#installation).
+Here is the [documentation to install and run MeiliSearch](https://docs.meilisearch.com/guides/advanced_guides/installation.html).
 
 _A tutorial about how to run MeiliSearch in production is coming..._
 
