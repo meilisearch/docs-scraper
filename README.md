@@ -28,7 +28,7 @@ Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
 Then, run:
 ```bash
 $ pipenv install
-$ pipenv run ./docs_scraper run <path-to-your-config-file>
+$ pipenv run ./docs_scraper <path-to-your-config-file>
 ```
 
 ### With Docker
