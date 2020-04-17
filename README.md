@@ -2,7 +2,15 @@
 
 A scraper for your documentation website that indexes the scraped content into a MeiliSearch instance.
 
+[MeiliSearch](https://github.com/meilisearch/MeiliSearch) is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box
+
+This scraper is used in production and crawls the [MeiliSearch documentation](https://docs.meilisearch.com/) on each deployment.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [Installation and Usage](#installation-and-usage)
+  - [Run your MeiliSearch Instance](#run-your-meilisearch-instance)
   - [From Source Code](#from-source-code)
   - [With Docker](#with-docker)
   - [In a GitHub Action](#in-a-github-action)
@@ -17,9 +25,22 @@ A scraper for your documentation website that indexes the scraped content into a
 
 ## Installation and Usage
 
-This project supports Python 3.6+.
+### Run your MeiliSearch Instance
+
+First of all, you need to run your own MeiliSearch instance. Indeed, the scraper will crawl your website and automatically fill the content into it.<br>
+MeiliSearch is open-source and can run on your own server! 😄
+
+**Without running a MeiliSearch instance, the scraper will not work.**
+
+Here is the [documentation to install and run MeiliSearch](https://docs.meilisearch.com/guides/advanced_guides/installation.html#installation).
+
+_A tutorial about how to run MeiliSearch in production is coming..._
+
+The variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY` you will set in the next steps are the credentials of this MeiliSearch instance.
 
 ### From Source Code
+
+This project supports Python 3.6+.
 
 The [`pipenv` command](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) must be installed.
 
