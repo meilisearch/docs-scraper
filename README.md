@@ -134,6 +134,8 @@ Here is the [configuration file](https://github.com/meilisearch/documentation/bl
 
 After having crawled your documentation, you might need a search bar to improve your user experience!
 
+![docs-searchbar-demo](assets/docs-searchbar-demo.gif)
+
 For the front part, check out the [docs-searchbar.js repository](https://github.com/meilisearch/docs-searchbar.js), wich provides a front-end search bar adapted for documentation.
 
 ## Authentication
