@@ -4,7 +4,7 @@ A scraper for your documentation website that indexes the scraped content into a
 
 [MeiliSearch](https://github.com/meilisearch/MeiliSearch) is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box
 
-This scraper is used in production and crawls the [MeiliSearch documentation](https://docs.meilisearch.com/) on each deployment.
+This scraper is used in production and runs on the [MeiliSearch documentation](https://docs.meilisearch.com/) on each deployment.
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ This scraper is used in production and crawls the [MeiliSearch documentation](ht
 
 ### Run your MeiliSearch Instance
 
-First of all, you need to run your own MeiliSearch instance. This scraper will crawl your website and automatically index its content in MeiliSearch.<br>
+First of all, you need to run your own MeiliSearch instance. This scraper will scrap your website and automatically index its content in MeiliSearch.<br>
 MeiliSearch is open-source and can run on your own server! 😄
 
 **Without running a MeiliSearch instance, the scraper will not work.**
@@ -132,7 +132,7 @@ Here is the [configuration file](https://github.com/meilisearch/documentation/bl
 
 ## And for the search bar?
 
-After having crawled your documentation, you might need a search bar to improve your user experience!
+After having scraped your documentation, you might need a search bar to improve your user experience!
 
 ![docs-searchbar-demo](assets/docs-searchbar-demo.gif)
 
