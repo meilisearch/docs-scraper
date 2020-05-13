@@ -204,3 +204,7 @@ A GitHub Action will be triggered and push the `latest` and `vX.X.X` version of 
 
 Based on [Algolia's docsearch scraper repository](https://github.com/algolia/docsearch-scraper) from [this commit](https://github.com/curquiza/docsearch-scraper/commit/aab0888989b3f7a4f534979f0148f471b7c435ee).<br>
 Due to a lot of future changes on this repository compared to the original one, we don't maintain it as an official fork.
+
+<hr>
+
+**MeiliSearch** provides and maintains many **SDKs and Integration tools** like this one. We want to provide everyone with an **amazing search experience for any kind of project**. If you want to contribute, make suggestions, or just know what's going on right now, visit us in the [integration-guides](https://github.com/meilisearch/integration-guides) repository.
