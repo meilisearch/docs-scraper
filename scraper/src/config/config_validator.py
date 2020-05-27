@@ -25,6 +25,11 @@ class ConfigValidator:
                                                     list):
             raise Exception('stop_urls should be list')
 
+        # Custom settings must be a dict
+        if self.config.custom_settings and not isinstance(self.config.custom_settings,
+                                                    dict):
+            raise Exception('custom_settings must be a dictionary')
+
         if self.config.js_render and not isinstance(self.config.js_render,
                                                     bool):
             raise Exception('js_render should be boolean')
