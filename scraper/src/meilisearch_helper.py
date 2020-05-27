@@ -2,6 +2,7 @@
 Wrapper on top of the MeiliSearch API client"""
 
 import meilisearch
+import sys
 from builtins import range
 
 def remove_bad_encoding(value):
@@ -101,11 +102,16 @@ class MeiliSearchHelper:
         'acceptNewFields': False
     }
 
-    def __init__(self, host_url, api_key, index_uid):
+    def __init__(self, host_url, api_key, index_uid, custom_settings):
         self.meilisearch_client = meilisearch.Client(host_url, api_key)
         self.__delete_and_create_index(index_uid)
         self.meilisearch_index = self.__delete_and_create_index(index_uid)
-        self.meilisearch_index.update_settings(MeiliSearchHelper.SETTINGS)
+        settings = {**MeiliSearchHelper.SETTINGS, **custom_settings}
+        try:
+            self.meilisearch_index.update_settings(settings)
+        except Exception:
+            print('MeiliSearchApiError: Settings are badly formatted. Please visit the API references of the settings https://docs.meilisearch.com/references/settings.html')
+            sys.exit()
 
     def add_records(self, records, url, from_sitemap):
         """Add new records to the index"""

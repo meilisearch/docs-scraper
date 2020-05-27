@@ -40,6 +40,7 @@ def run_config(config):
         config.app_id,
         config.api_key,
         config.index_uid,
+        config.custom_settings
     )
 
     root_module = 'src.' if __name__ == '__main__' else 'scraper.src.'
