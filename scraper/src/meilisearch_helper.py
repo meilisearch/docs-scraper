@@ -110,7 +110,7 @@ class MeiliSearchHelper:
         try:
             self.meilisearch_index.update_settings(settings)
         except Exception:
-            print('MeiliSearchApiError: Settings are badly formatted. Please visit the API references of the settings https://docs.meilisearch.com/references/settings.html')
+            print("MeiliSearchApiError: Settings are badly formatted. ")
             sys.exit()
 
     def add_records(self, records, url, from_sitemap):
