@@ -107,11 +107,7 @@ class MeiliSearchHelper:
         self.__delete_and_create_index(index_uid)
         self.meilisearch_index = self.__delete_and_create_index(index_uid)
         settings = {**MeiliSearchHelper.SETTINGS, **custom_settings}
-        try:
-            self.meilisearch_index.update_settings(settings)
-        except Exception:
-            print("MeiliSearchApiError: Settings are badly formatted. ")
-            sys.exit()
+        self.meilisearch_index.update_settings(settings)
 
     def add_records(self, records, url, from_sitemap):
         """Add new records to the index"""
