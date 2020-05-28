@@ -19,6 +19,7 @@ This scraper is used in production and runs on the [MeiliSearch documentation](h
 - [And for the search bar?](#and-for-the-search-bar)
 - [Authentication](#authentication)
 - [Installing Chrome Headless](#installing-chrome-headless)
+- [Compatibility with MeiliSearch](#compatibility-with-meilisearch)
 - [Development Workflow](#development-workflow)
 - [Credits](#credits)
 
@@ -162,6 +163,11 @@ In case of Google Cloud Identity-Aware Proxy, please specify these env variables
 
 Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 [Download the version](http://chromedriver.chromium.org/downloads) suited to your OS and then set the environment variable `CHROMEDRIVER_PATH`.
+
+## Compatibility with MeiliSearch
+
+This package is compatible with the following MeiliSearch versions:
+- `v0.10.X`
 
 ## Development Workflow
 
