@@ -2,7 +2,6 @@
 Wrapper on top of the MeiliSearch API client"""
 
 import meilisearch
-import sys
 from builtins import range
 
 def remove_bad_encoding(value):
