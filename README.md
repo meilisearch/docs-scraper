@@ -170,6 +170,7 @@ Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 
 This package is compatible with the following MeiliSearch versions:
 - `v0.10.X`
+- `v0.11.X`
 
 ## Development Workflow
 
