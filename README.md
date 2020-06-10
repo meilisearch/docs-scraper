@@ -129,7 +129,7 @@ A generic configuration file:
 
 The scraper will focus on the highlighted information depending on your selectors.
 
-Here is the [configuration file](https://github.com/meilisearch/documentation/blob/master/.vuepress/scraper/config.json) we use for the MeiliSearch documentation.
+Here is the [configuration file](https://github.com/meilisearch/documentation/blob/master/.vuepress/docs-scraper/docs-scraper.config.json) we use for the MeiliSearch documentation.
 
 ## And for the search bar?
 
