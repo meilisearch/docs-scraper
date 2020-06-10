@@ -7,7 +7,7 @@ def config(additional_config={}):
         'allowed_domains': 'allowed_domains',
         'api_key': 'api_key',
         'app_id': 'app_id',
-        'custom_settings': {},
+        'custom_settings': None,
         'hash_strategy': 'hash_strategy',
         'index_uid': 'index_uid',
         'selectors': [],

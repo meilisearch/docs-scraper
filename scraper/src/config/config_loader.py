@@ -26,7 +26,7 @@ class ConfigLoader:
     allowed_domains = None
     api_key = None
     app_id = None
-    custom_settings = None
+    custom_settings = {}
     extra_records = []
     index_uid = None
     index_uid_tmp = None

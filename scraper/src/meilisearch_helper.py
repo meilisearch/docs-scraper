@@ -103,9 +103,11 @@ class MeiliSearchHelper:
 
     def __init__(self, host_url, api_key, index_uid, custom_settings):
         self.meilisearch_client = meilisearch.Client(host_url, api_key)
-        self.__delete_and_create_index(index_uid)
         self.meilisearch_index = self.__delete_and_create_index(index_uid)
-        settings = {**MeiliSearchHelper.SETTINGS, **custom_settings}
+        self.add_settings(MeiliSearchHelper.SETTINGS, custom_settings)
+
+    def add_settings(self, default_settings, custom_settings):
+        settings = {**default_settings, **custom_settings}
         self.meilisearch_index.update_settings(settings)
 
     def add_records(self, records, url, from_sitemap):
