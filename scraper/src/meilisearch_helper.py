@@ -129,7 +129,7 @@ class MeiliSearchHelper:
         except Exception:
             print("The index " + index_uid + " does not exist. Creating...")
 
-        return self.meilisearch_client.create_index(uid=index_uid, primary_key='objectID')
+        return self.meilisearch_client.create_index(index_uid, {'primaryKey': 'objectID'})
 
 # Algolia's settings:
     # {"minWordSizefor1Typo"=>3,
