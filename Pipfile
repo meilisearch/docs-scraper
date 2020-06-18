@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Scrapy = "==1.5.0"
+Scrapy = "==2.1.0"
 selenium = "==3.141.0"
 pytest = "==5.4.3"
 meilisearch = "==0.11.0"

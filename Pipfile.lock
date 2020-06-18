@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9766e2a56480b47f44f28142c30f07a226865c426056ca69296b9e8a7e7649b7"
+            "sha256": "6fec5361267cf127569e0a4dcbae41afb0b4d8c3d74e127b1a5e31f72768871a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -212,6 +212,12 @@
             ],
             "version": "==0.13.1"
         },
+        "protego": {
+            "hashes": [
+                "sha256:a682771bc7b51b2ff41466460896c1a5a653f9a1e71639ef365a72e66d8734b4"
+            ],
+            "version": "==0.1.16"
+        },
         "py": {
             "hashes": [
                 "sha256:a673fa23d7000440cc885c17dbd34fafcb7d7a6e230b29f6766400de36a33c44",
@@ -307,11 +313,11 @@
         },
         "scrapy": {
             "hashes": [
-                "sha256:08d86737c560dcc1c4b73ac0ac5bd8d14b3e2265c1f7b195f0b73ab13741fe03",
-                "sha256:31a0bf05d43198afaf3acfb9b4fb0c09c1d7d7ff641e58c66e36117f26c4b755"
+                "sha256:640aea0f9be9b055f5cfec5ab78ee88bb37a5be3809b138329bd2af51392ec7f",
+                "sha256:883ab2dcb6cafb22c7448616baeb5b4d7bedef57ca6a9a5f4e902cb1d6e7aeca"
             ],
             "index": "pypi",
-            "version": "==1.5.0"
+            "version": "==2.1.0"
         },
         "selenium": {
             "hashes": [
