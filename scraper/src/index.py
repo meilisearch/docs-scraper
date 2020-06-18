@@ -2,6 +2,7 @@
 Docs-scraper main entry point
 """
 import os
+import sys
 import json
 import requests
 from requests_iap import IAPAuth
@@ -109,7 +110,7 @@ def run_config(config):
     else:
         print('Crawling issue: nbHits 0 for ' + config.index_uid)
         # meilisearch_helper.report_crawling_issue()
-        exit(EXIT_CODE_NO_RECORD)
+        sys.exit(EXIT_CODE_NO_RECORD)
     print("")
 
 

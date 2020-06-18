@@ -3,6 +3,7 @@ import pytest
 
 from ...config.config_loader import ConfigLoader
 from .abstract import config
+from .mocked_init import MockedInit
 
 
 class TestStartUrls:
@@ -70,7 +71,6 @@ class TestStartUrls:
 
     def test_start_urls_should_be_generated_when_there_is_automatic_tagging_browser(
             self, monkeypatch):
-        from .mocked_init import MockedInit
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
         monkeypatch.setattr("time.sleep", lambda x: "")
