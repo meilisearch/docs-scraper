@@ -2,6 +2,7 @@
 from ...config.config_loader import ConfigLoader
 from ...config.browser_handler import BrowserHandler
 from .abstract import config
+from .mocked_init import MockedInit
 
 
 class TestOpenSeleniumBrowser:
@@ -14,7 +15,6 @@ class TestOpenSeleniumBrowser:
                                                 actual.js_render) is False
 
     def test_browser_needed_when_js_render_true(self, monkeypatch):
-        from .mocked_init import MockedInit
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
         monkeypatch.setattr("time.sleep", lambda x: "")
@@ -30,7 +30,6 @@ class TestOpenSeleniumBrowser:
 
     def test_browser_needed_when_config_contains_automatic_tag(self,
                                                                monkeypatch):
-        from .mocked_init import MockedInit
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
         monkeypatch.setattr("time.sleep", lambda x: "")

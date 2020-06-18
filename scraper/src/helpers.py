@@ -1,6 +1,7 @@
+import json
+import unicodedata
 from builtins import input
 from cssselect import HTMLTranslator
-import json
 
 
 def confirm(message="Confirm"):
@@ -29,7 +30,6 @@ def is_number(s):
         pass
 
     try:
-        import unicodedata
         unicodedata.numeric(s)
         return True
     except (TypeError, ValueError):
