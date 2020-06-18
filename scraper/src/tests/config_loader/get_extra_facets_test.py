@@ -1,7 +1,7 @@
 # coding: utf-8
 from ...config.config_loader import ConfigLoader
 from .abstract import config
-
+from .mocked_init import MockedInit
 
 class TestGetExtraFacets:
     def test_extra_facets_should_be_empty_by_default(self):
@@ -13,7 +13,6 @@ class TestGetExtraFacets:
 
     def test_extra_facets_should_be_set_from_start_urls_variables_browser(self,
                                                                           monkeypatch):
-        from .mocked_init import MockedInit
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
         monkeypatch.setattr("time.sleep", lambda x: "")
@@ -37,7 +36,6 @@ class TestGetExtraFacets:
 
     def test_extra_facets_should_be_set_from_start_urls_variables_with_two_start_url_browser(
             self, monkeypatch):
-        from .mocked_init import MockedInit
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
         monkeypatch.setattr("time.sleep", lambda x: "")
@@ -67,7 +65,6 @@ class TestGetExtraFacets:
 
     def test_extra_facets_should_be_set_from_start_urls_variables_with_multiple_tags_browser(
             self, monkeypatch):
-        from .mocked_init import MockedInit
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
         monkeypatch.setattr("time.sleep", lambda x: "")

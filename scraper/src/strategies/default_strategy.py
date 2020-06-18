@@ -10,6 +10,7 @@ from ..config.urls_parser import UrlsParser
 from ..helpers import to_json
 import json
 import hashlib
+import sys
 
 
 class DefaultStrategy(AbstractStrategy):
@@ -63,7 +64,7 @@ class DefaultStrategy(AbstractStrategy):
     def get_records_from_dom(self, current_page_url=None):
 
         if self.dom is None:
-            exit('DefaultStrategy.dom is not defined')
+            sys.exit('DefaultStrategy.dom is not defined')
 
         # Reset it to be able to have a clean instance when testing
         self.global_content = {}
