@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "070c1f75c7633c26d0f06014294361ad5c3430745fdeb9ce61521d5931269a42"
+            "sha256": "b18a1272aaf8060abc73e26cecf8786576eb3ff658862da26165fb04ee940f19"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,10 +32,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:5ad7e9a056d25ffa5082862e36f119f7f7cec6457fa07ee2f8c339814b80c9b1",
-                "sha256:9cd41137dc19af6a5e03b630eefe7d1f458d964d406342dd3edf625839b944cc"
+                "sha256:5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3",
+                "sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"
             ],
-            "version": "==2020.4.5.2"
+            "version": "==2020.6.20"
         },
         "cffi": {
             "hashes": [
@@ -179,11 +179,11 @@
         },
         "meilisearch": {
             "hashes": [
-                "sha256:ba97de3b50ed757649db3c27e4c0a9d8d39116e573210c262b04105d1bfe89ae",
-                "sha256:eab8b50be32072de8a1775ebfcb0c7b083536764e80ca92960806a6281843d8e"
+                "sha256:38dbd6f1292ca658d21eb629b46486df00499dfddd2e7ded260e29de836db54e",
+                "sha256:fefaef59a0b0aaf5401664f7ab21afc54f17040b1311a7451118e2db81ceffa0"
             ],
             "index": "pypi",
-            "version": "==0.11.0"
+            "version": "==0.11.1"
         },
         "more-itertools": {
             "hashes": [
@@ -381,10 +381,10 @@
         },
         "wcwidth": {
             "hashes": [
-                "sha256:79375666b9954d4a1a10739315816324c3e73110af9d0e102d906fdb0aec009f",
-                "sha256:8c6b5b6ee1360b842645f336d9e5d68c55817c26d3050f46b235ef2bc650e48f"
+                "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784",
+                "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"
             ],
-            "version": "==0.2.4"
+            "version": "==0.2.5"
         },
         "zipp": {
             "hashes": [
