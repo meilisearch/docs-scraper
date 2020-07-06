@@ -52,7 +52,7 @@ This scraper is used in production and runs on the [MeiliSearch documentation](h
   - [Authentication](#authentication)
   - [Installing Chrome Headless](#installing-chrome-headless)
 - [🤖 Compatibility with MeiliSearch](#-compatibility-with-meilisearch)
-- [👩‍💻 Development Workflow](#-development-workflow)
+- [⚙️ Development Workflow and Contributing](#️-development-workflow-and-contributing)
 - [Credits](#credits)
 
 
@@ -488,45 +488,15 @@ Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 ## 🤖 Compatibility with MeiliSearch
 
 This package is compatible with the following MeiliSearch versions:
-- `v0.10.X`
+- `v0.12.X`
 - `v0.11.X`
+- `v0.10.X`
 
-## 👩‍💻 Development Workflow
+## ⚙️ Development Workflow and Contributing
 
-### Install and Launch <!-- omit in TOC -->
+Any new contribution is more than welcome in this project!
 
-The [`pipenv` command](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) must be installed.
-
-Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
-
-Then, run:
-```bash
-$ pipenv install
-$ pipenv run ./docs_scraper run <path-to-your-config-file>
-```
-
-### Linter and Tests <!-- omit in TOC -->
-
-```bash
-$ pipenv install --dev
-# Linter
-$ pipenv run pylint scraper
-# Tests
-$ pipenv run pytest ./scraper/src -k "not _browser"
-```
-
-### Release <!-- omit in TOC -->
-
-Once the changes are merged on `master`, in your terminal, you must be on the `master` branch and push a new tag with the right version:
-
-```bash
-$ git checkout master
-$ git pull origin master
-$ git tag vX.X.X
-$ git push --tag origin master
-```
-
-A GitHub Action will be triggered and push the `latest` and `vX.X.X` version of Docker image on [DockerHub](https://hub.docker.com/repository/docker/getmeili/docs-scraper)
+If you want to know more about the development workflow or want to contribute, please visit our [contributing guidelines](/CONTRIBUTING.md) for detailed instructions!
 
 ## Credits
 
