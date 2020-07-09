@@ -13,7 +13,6 @@ import sys
 import copy
 
 from .config_validator import ConfigValidator
-# from .nb_hits_updater import NbHitsUpdater
 from .urls_parser import UrlsParser
 from .selectors_parser import SelectorsParser
 from .browser_handler import BrowserHandler
