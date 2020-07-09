@@ -103,7 +103,6 @@ def run_config(config):
     if DocumentationSpider.NB_INDEXED > 0:
         # meilisearch_helper.commit_tmp_index()
         print('Nb hits: {}'.format(DocumentationSpider.NB_INDEXED))
-        config.update_nb_hits_value(DocumentationSpider.NB_INDEXED)
     else:
         print('Crawling issue: nbHits 0 for ' + config.index_uid)
         # meilisearch_helper.report_crawling_issue()
