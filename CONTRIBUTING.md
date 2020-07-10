@@ -39,7 +39,7 @@ Then, run:
 
 ```bash
 $ pipenv install
-$ pipenv run ./docs_scraper run <path-to-your-config-file>
+$ pipenv run ./docs_scraper <path-to-your-config-file>
 ```
 
 ### Linter and Tests
