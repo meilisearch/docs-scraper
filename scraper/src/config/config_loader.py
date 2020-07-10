@@ -6,14 +6,12 @@ Load the config json file.
 """
 
 from collections import OrderedDict
-from distutils.util import strtobool
 import json
 import os
 import sys
 import copy
 
 from .config_validator import ConfigValidator
-from .nb_hits_updater import NbHitsUpdater
 from .urls_parser import UrlsParser
 from .selectors_parser import SelectorsParser
 from .browser_handler import BrowserHandler
@@ -46,7 +44,6 @@ class ConfigLoader:
     strategy = 'default'
     strict_redirect = True
     strip_chars = u".,;:§¶"
-    update_nb_hits = None
     use_anchors = False
     user_agent = 'MeiliSearch docs-scraper'
     only_content_level = False
@@ -111,9 +108,7 @@ class ConfigLoader:
         # Parse Env
         self.app_id = os.environ.get('MEILISEARCH_HOST_URL', None)
         self.api_key = os.environ.get('MEILISEARCH_API_KEY', None)
-        self.update_nb_hits = os.environ.get('UPDATE_NB_HITS', None)
-        if self.update_nb_hits is not None:
-            self.update_nb_hits = bool(strtobool(self.update_nb_hits))
+
         if self.index_uid_tmp is None:
             self.index_uid_tmp = os.environ.get('index_uid_TMP', self.index_uid + '_tmp')
 
@@ -127,16 +122,6 @@ class ConfigLoader:
         if self.allowed_domains is None:
             self.allowed_domains = UrlsParser.build_allowed_domains(
                 self.start_urls, self.stop_urls)
-
-    def update_nb_hits_value(self, nb_hits):
-        if self.config_file is not None:
-            # config loaded from file
-            previous_nb_hits = None if 'nb_hits' not in self.config_content else \
-                self.config_content['nb_hits']
-            nb_hit_updater = NbHitsUpdater(self.config_file,
-                                           self.config_content,
-                                           previous_nb_hits, nb_hits)
-            nb_hit_updater.update(self.update_nb_hits)
 
     def get_extra_facets(self):
         return UrlsParser.get_extra_facets(self.start_urls)
