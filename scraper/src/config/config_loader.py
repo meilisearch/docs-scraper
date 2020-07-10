@@ -6,7 +6,6 @@ Load the config json file.
 """
 
 from collections import OrderedDict
-from distutils.util import strtobool
 import json
 import os
 import sys
