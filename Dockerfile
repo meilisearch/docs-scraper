@@ -10,4 +10,4 @@ ENV LANG C.UTF-8
 RUN apt-get update -y \
     && apt-get install -y python3-pip
 RUN pip3 install pipenv
-RUN pipenv install --python 3.6
+RUN pipenv install --python 3.8
