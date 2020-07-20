@@ -1,6 +1,10 @@
 name: Test and Lint
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   test:
@@ -20,3 +24,5 @@ jobs:
         run: pipenv run pylint scraper
       - name: Run tests
         run: pipenv run pytest ./scraper/src -k "not _browser"
+      - name: Build Docker image
+        run: docker build .
