@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM python:3.8.4-buster
 
 WORKDIR /docs-scraper
 
@@ -10,4 +10,4 @@ ENV LANG C.UTF-8
 RUN apt-get update -y \
     && apt-get install -y python3-pip
 RUN pip3 install pipenv
-RUN pipenv install --python 3.8
+RUN pipenv --python 3.8 install
