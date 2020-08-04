@@ -95,8 +95,7 @@ class MeiliSearchHelper:
             'url',
             'content',
             'objectID'
-        ],
-        'acceptNewFields': False
+        ]
     }
 
     def __init__(self, host_url, api_key, index_uid, custom_settings):

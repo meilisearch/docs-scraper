@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0b41753ad827a3b03033415963b3dab415ea44823c4844f2745001f471c867ec"
+            "sha256": "fc13ac9a3c356c68cd6ee79b83c43911a00d26f13cd43d0083089555745b0702"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -138,9 +138,10 @@
         },
         "iniconfig": {
             "hashes": [
-                "sha256:aa0b40f50a00e72323cb5d41302f9c6165728fd764ac8822aa3fff00a40d56b4"
+                "sha256:80cf40c597eb564e86346103f609d74efce0f6b4d4f30ec8ce9e2c26411ba437",
+                "sha256:e5f92f89355a67de0595932a6c6c02ab4afddc6fcdc0bfc5becd0d60884d3f69"
             ],
-            "version": "==1.0.0"
+            "version": "==1.0.1"
         },
         "itemadapter": {
             "hashes": [
@@ -187,11 +188,11 @@
         },
         "meilisearch": {
             "hashes": [
-                "sha256:42a316d24e8b04df8bcae23a4435407ab5bcee24f25662f90ef25b0402b18952",
-                "sha256:f35e919bc96e6e0821c0761f7d24ca70aa01b0f932c95e774e30a807f42815f5"
+                "sha256:1be21ab08d494a908be99f587550392e4124c72077d3d9f854dbbaa907c286f9",
+                "sha256:d21fc86d595289706f5e7da194e27f150d1f5a7efeb60e40562e1bac11fc46a5"
             ],
             "index": "pypi",
-            "version": "==0.11.2"
+            "version": "==0.12.0"
         },
         "more-itertools": {
             "hashes": [
