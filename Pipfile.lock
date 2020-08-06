@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fc13ac9a3c356c68cd6ee79b83c43911a00d26f13cd43d0083089555745b0702"
+            "sha256": "5fb07db38990f1f0c71bcafbcb876686d452b34a44fb3cf4ed2f24ad59ad435a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -117,10 +117,10 @@
         },
         "hyperlink": {
             "hashes": [
-                "sha256:4288e34705da077fada1111a24a0aa08bb1e76699c9ce49876af722441845654",
-                "sha256:ab4a308feb039b04f855a020a6eda3b18ca5a68e6d8f8c899cbe9e653721d04f"
+                "sha256:47fcc7cd339c6cb2444463ec3277bdcfe142c8b1daf2160bdd52248deec815af",
+                "sha256:c528d405766f15a2c536230de7e160b65a08e20264d8891b3eb03307b0df3c63"
             ],
-            "version": "==19.0.0"
+            "version": "==20.0.1"
         },
         "idna": {
             "hashes": [
@@ -149,6 +149,20 @@
                 "sha256:de3f6f567446122a48d496c10b5d830d7909f2399bc7ad51d61163c57967f480"
             ],
             "version": "==0.1.0"
+        },
+        "itemloaders": {
+            "hashes": [
+                "sha256:306b2b151491e9b2eb3ea44bd65b9ab5f1ace37fcd3cb31b71f4a0f72f909a85",
+                "sha256:ef8f237f8fa8328dcd5a04679a5d48a2d0ae43403e665caf32b303c967aa3062"
+            ],
+            "version": "==1.0.1"
+        },
+        "jmespath": {
+            "hashes": [
+                "sha256:b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9",
+                "sha256:cdf6525904cc597730141d61b36f2e4b8ecc257c420fa2f4549bac2c2d0cb72f"
+            ],
+            "version": "==0.10.0"
         },
         "lxml": {
             "hashes": [
@@ -184,6 +198,7 @@
                 "sha256:ecc930ae559ea8a43377e8b60ca6f8d61ac532fc57efb915d899de4a67928efd",
                 "sha256:f161af26f596131b63b236372e4ce40f3167c1b5b5d459b29d2514bd8c9dc9ee"
             ],
+            "markers": "platform_python_implementation == 'CPython'",
             "version": "==4.5.2"
         },
         "meilisearch": {
@@ -323,11 +338,11 @@
         },
         "scrapy": {
             "hashes": [
-                "sha256:6a09beb5190bfdee2d72cf261822eae5d92fe8a86ac9ee1f55fc44b4864ca583",
-                "sha256:d9d898739f199bd9f9e2258770d5bfeeb754b6ed4eb84a41c04fd52e9649266d"
+                "sha256:31a9807f8771bfa33693aae9a5da46b4cfc8362dee11dff811574b760cc2749d",
+                "sha256:b4d08cdacb615563c291d053ef1ba2dc08d9d4b6d81578684eaa1cf7b832f90c"
             ],
             "index": "pypi",
-            "version": "==2.2.1"
+            "version": "==2.3.0"
         },
         "selenium": {
             "hashes": [
