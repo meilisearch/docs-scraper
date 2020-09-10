@@ -21,7 +21,6 @@ from scrapy.exceptions import CloseSpider
 EXIT_CODE_EXCEEDED_RECORDS = 4
 
 
-#pylint: disable=abstract-method
 class DocumentationSpider(CrawlSpider, SitemapSpider):
     """
     DocumentationSpider
