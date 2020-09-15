@@ -1,6 +1,10 @@
 name: Test and Lint
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   test:
@@ -8,10 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.7
+      - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
-          python-version: 3.7
+          python-version: 3.8
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies
@@ -20,3 +24,5 @@ jobs:
         run: pipenv run pylint scraper
       - name: Run tests
         run: pipenv run pytest ./scraper/src -k "not _browser"
+      - name: Build Docker image
+        run: docker build .

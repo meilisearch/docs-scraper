@@ -134,7 +134,7 @@ In our case, the main container is `theme-default-content` and the selector the 
 
 #### From Source Code <!-- omit in TOC -->
 
-This project supports Python 3.6+.
+This project supports Python 3.8.
 
 The [`pipenv` command](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) must be installed.
 
@@ -488,6 +488,8 @@ Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 ## 🤖 Compatibility with MeiliSearch
 
 This package is compatible with the following MeiliSearch versions:
+- `v0.14.X`
+- `v0.13.X`
 - `v0.12.X`
 - `v0.11.X`
 - `v0.10.X`
