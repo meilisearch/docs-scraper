@@ -20,7 +20,7 @@ class DefaultStrategy(AbstractStrategy):
     dom = None
 
     def __init__(self, config):
-        super(DefaultStrategy, self).__init__(config)
+        super().__init__(config)
         self.levels = ['lvl0', 'lvl1', 'lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6']
         self.global_content = {}
         self.page_rank = {}
