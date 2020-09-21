@@ -145,6 +145,9 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
                           },
                           errback=self.errback_alternative_link)
 
+    def parse(self, response, **kwargs):
+        return super()._parse(response, **kwargs)
+
     def add_records(self, response, from_sitemap):
         records = self.strategy.get_records_from_response(response)
         self.meilisearch_helper.add_records(records, response.url, from_sitemap)
@@ -176,7 +179,6 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
 
         if self.is_rules_compliant(response):
             self.add_records(response, from_sitemap=False)
-
         else:
             print("\033[94m> Ignored: from start url\033[0m " + response.url)
 
