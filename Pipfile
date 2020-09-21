@@ -11,7 +11,7 @@ meilisearch = "==0.12.3"
 requests-iap = "==0.2.0"
 
 [dev-packages]
-pylint = "==2.5.3"
+pylint = "==2.6.0"
 
 [requires]
 python_version = "3.8"
