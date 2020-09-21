@@ -80,7 +80,7 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
         self.remove_get_params = config.remove_get_params
         self.strict_redirect = config.strict_redirect
         self.nb_hits_max = config.nb_hits_max
-        super(DocumentationSpider, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         # Get rid of scheme consideration
         # Start_urls must stays authentic URL in order to be reached, we build agnostic scheme regex based on those URL
@@ -120,7 +120,7 @@ class DocumentationSpider(CrawlSpider, SitemapSpider):
             self.force_sitemap_urls_crawling = config.force_sitemap_urls_crawling
 
         # END _init_ part from SitemapSpider
-        super(DocumentationSpider, self)._compile_rules()
+        super()._compile_rules()
 
     def start_requests(self):
         # We crawl according to the sitemap

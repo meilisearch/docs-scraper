@@ -100,8 +100,8 @@ class ConfigLoader:
             self.config_content = copy.deepcopy(data)
 
             return data
-        except ValueError:
-            raise ValueError('CONFIG is not a valid JSON')
+        except ValueError as value_error:
+            raise ValueError('CONFIG is not a valid JSON') from value_error
             sys.exit(EXIT_CODE_WRONG_CONFIG)
 
     def _parse(self):

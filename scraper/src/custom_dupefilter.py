@@ -57,7 +57,7 @@ class CustomDupeFilter(RFPDupeFilter):
         return cache[include_headers]
 
     def __init__(self, path=None, debug=False, use_anchors=False):
-        super(CustomDupeFilter, self).__init__(path=path, debug=debug)
+        super().__init__(path=path, debug=debug)
         # Spread config bool
         self.use_anchors = use_anchors
         self.fingerprints_with_scheme = set()  # This set will not be scheme agnostic
