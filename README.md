@@ -22,7 +22,7 @@
 
 **docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **MeiliSearch** instance.
 
-**MeiliSearch** is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box.
+**MeiliSearch** is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box.
 
 This scraper is used in production and runs on the [MeiliSearch documentation](https://docs.meilisearch.com/) on each deployment.
 
