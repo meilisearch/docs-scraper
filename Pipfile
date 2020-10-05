@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 Scrapy = "==2.3.0"
 selenium = "==3.141.0"
-pytest = "==6.1.0"
+pytest = "==6.1.1"
 meilisearch = "==0.12.3"
 requests-iap = "==0.2.0"
 
