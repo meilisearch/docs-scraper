@@ -50,6 +50,7 @@ This scraper is used in production and runs on the [MeiliSearch documentation](h
     - [`min_indexed_level` (optional)](#min_indexed_level-optional)
     - [`only_content_level` (optional)](#only_content_level-optional)
   - [Authentication](#authentication)
+    - [Keycloak Access: Identity and Access Management](#keycloak-access-identity-and-access-management)
   - [Installing Chrome Headless](#installing-chrome-headless)
 - [🤖 Compatibility with MeiliSearch](#-compatibility-with-meilisearch)
 - [⚙️ Development Workflow and Contributing](#️-development-workflow-and-contributing)
@@ -479,6 +480,12 @@ Values for these headers are taken from env variables `CF_ACCESS_CLIENT_ID` and 
 In case of Google Cloud Identity-Aware Proxy, please specify these env variables:
 - `IAP_AUTH_CLIENT_ID` - # pick [client ID of the application](https://console.cloud.google.com/apis/credentials) you are connecting to
 - `IAP_AUTH_SERVICE_ACCOUNT_JSON` - # generate in [Actions](https://console.cloud.google.com/iam-admin/serviceaccounts) -> Create key -> JSON
+
+#### Keycloak Access: Identity and Access Management
+
+If you need to scrape site protected by Keycloak (Gatekeeper), you have to provide a valid Access Token.
+
+If you set the env variables `KC_URL`, `KC_REALM`, `KC_CLIENT_ID` and `KC_CLIENT_SECRET` the scraper authenticates himself against Keycloak using _Client Credentials Grant_ and adds the resulting Access Token as `Authorization` HTTP header to each scraping request.
 
 ### Installing Chrome Headless
 
