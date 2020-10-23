@@ -25,7 +25,7 @@ First of all, thank you for contributing to MeiliSearch! The goal of this docume
 4. Review the [Development Workflow](#workflow) section that describes the steps to maintain the repository.
 5. Make your changes.
 6. [Submit the branch as a PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) pointing to the `master` branch of the main docs-scraper repository. A maintainer should comment and/or review your Pull Request within a few days. Although depending on the circumstances, it may take longer.<br>
- We do not enforce a naming convention for the PRs, but **please use something descriptive of your changes**, having in mind that the title of your PR will be automatically added to the next [release changelog](https://github.com/meilisearch/docs-scraper/releases/).
+ We do not enforce a naming convention for the PRs, but **please use something descriptive of your changes**, having in mind that the title of your PR will be automatically added to the next [release changelogs](https://github.com/meilisearch/docs-scraper/releases/).
 
 ## Development Workflow
 
