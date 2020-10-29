@@ -6,6 +6,7 @@ import sys
 import json
 import requests
 from requests_iap import IAPAuth
+from keycloak.realm import KeycloakRealm
 
 from scrapy.crawler import CrawlerProcess
 
@@ -67,6 +68,16 @@ def run_config(config):
             ),
         )(requests.Request()).headers["Authorization"]
         headers.update({"Authorization": iap_token})
+    elif os.getenv("KC_URL") and os.getenv("KC_REALM") and os.getenv("KC_CLIENT_ID") and os.getenv("KC_CLIENT_SECRET"):
+        realm = KeycloakRealm(
+          server_url=os.getenv("KC_URL"),
+          realm_name=os.getenv("KC_REALM"))
+        oidc_client = realm.open_id_connect(
+          client_id=os.getenv("KC_CLIENT_ID"),
+          client_secret=os.getenv("KC_CLIENT_SECRET"))
+        token_response = oidc_client.client_credentials()
+        token = token_response["access_token"]
+        headers.update({"Authorization": 'bearer ' + token})
 
     DEFAULT_REQUEST_HEADERS = headers
 

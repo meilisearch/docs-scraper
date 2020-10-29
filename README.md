@@ -478,6 +478,12 @@ In case of Google Cloud Identity-Aware Proxy, please specify these env variables
 - `IAP_AUTH_CLIENT_ID` - # pick [client ID of the application](https://console.cloud.google.com/apis/credentials) you are connecting to
 - `IAP_AUTH_SERVICE_ACCOUNT_JSON` - # generate in [Actions](https://console.cloud.google.com/iam-admin/serviceaccounts) -> Create key -> JSON
 
+#### Keycloak Access: Identity and Access Management
+
+If you need to scrape site protected by [Keycloak](https://github.com/keycloak/keycloak) (Gatekeeper), you have to provide a valid access token.
+
+If you set the environment variables `KC_URL`, `KC_REALM`, `KC_CLIENT_ID`, and `KC_CLIENT_SECRET` the scraper authenticates itself against Keycloak using _Client Credentials Grant_ and adds the resulting access token as `Authorization` HTTP header to each scraping request.
+
 ### Installing Chrome Headless
 
 Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
