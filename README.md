@@ -6,10 +6,10 @@
 
 <h4 align="center">
   <a href="https://github.com/meilisearch/MeiliSearch">MeiliSearch</a> |
+  <a href="https://docs.meilisearch.com">Documentation</a> |
   <a href="https://www.meilisearch.com">Website</a> |
   <a href="https://blog.meilisearch.com">Blog</a> |
   <a href="https://twitter.com/meilisearch">Twitter</a> |
-  <a href="https://docs.meilisearch.com">Documentation</a> |
   <a href="https://docs.meilisearch.com/faq">FAQ</a>
 </h4>
 
@@ -20,9 +20,7 @@
   <a href="https://app.bors.tech/repositories/28977"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
 </p>
 
-**docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **MeiliSearch** instance.
-
-**MeiliSearch** is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box.
+**docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **MeiliSearch** instance. **MeiliSearch** is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, facets and synonyms are provided out-of-the-box.
 
 This scraper is used in production and runs on the [MeiliSearch documentation](https://docs.meilisearch.com/) on each deployment.
 
