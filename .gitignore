@@ -21,4 +21,4 @@ configs/public
 configs/private
 
 # config file
-*config*.json
+config.json

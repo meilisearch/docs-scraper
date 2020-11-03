@@ -1,3 +1,3 @@
-status = ["docs-scraper-tests"]
+status = ['unit-tests', 'integration-tests', 'linter', 'image-build']
 # 1 hour timeout
 timeout-sec = 3600

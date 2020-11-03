@@ -14,7 +14,7 @@
 </h4>
 
 <p align="center">
-  <a href="https://github.com/meilisearch/docs-searchbar.js/actions"><img src="https://github.com/meilisearch/docs-searchbar.js/workflows/Tests-Lint/badge.svg" alt="Test"></a>
+  <a href="https://github.com/meilisearch/docs-searchbar.js/actions"><img src="https://github.com/meilisearch/docs-searchbar.js/workflows/Check/badge.svg" alt="Test"></a>
   <a href="https://github.com/meilisearch/docs-scraper/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational" alt="License"></a>
   <a href="https://slack.meilisearch.com"><img src="https://img.shields.io/badge/slack-MeiliSearch-blue.svg?logo=slack" alt="Slack"></a>
   <a href="https://app.bors.tech/repositories/28977"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
@@ -478,7 +478,7 @@ In case of Google Cloud Identity-Aware Proxy, please specify these env variables
 - `IAP_AUTH_CLIENT_ID` - # pick [client ID of the application](https://console.cloud.google.com/apis/credentials) you are connecting to
 - `IAP_AUTH_SERVICE_ACCOUNT_JSON` - # generate in [Actions](https://console.cloud.google.com/iam-admin/serviceaccounts) -> Create key -> JSON
 
-#### Keycloak Access: Identity and Access Management
+#### Keycloak Access: Identity and Access Management <!-- omit in TOC -->
 
 If you need to scrape site protected by [Keycloak](https://github.com/keycloak/keycloak) (Gatekeeper), you have to provide a valid access token.
 
