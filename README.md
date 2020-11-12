@@ -14,7 +14,7 @@
 </h4>
 
 <p align="center">
-  <a href="https://github.com/meilisearch/docs-searchbar.js/actions"><img src="https://github.com/meilisearch/docs-searchbar.js/workflows/Check/badge.svg" alt="Test"></a>
+  <a href="https://github.com/meilisearch/docs-searchbar.js/actions"><img src="https://github.com/meilisearch/docs-searchbar.js/workflows/Tests/badge.svg" alt="GitHub Workflow Status"></a>
   <a href="https://github.com/meilisearch/docs-scraper/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational" alt="License"></a>
   <a href="https://slack.meilisearch.com"><img src="https://img.shields.io/badge/slack-MeiliSearch-blue.svg?logo=slack" alt="Slack"></a>
   <a href="https://app.bors.tech/repositories/28977"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
