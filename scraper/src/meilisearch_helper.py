@@ -124,7 +124,7 @@ class MeiliSearchHelper:
 
     def __delete_and_create_index(self, index_uid):
         try:
-            self.meilisearch_client.get_index(index_uid).delete()
+            self.meilisearch_client.index(index_uid).delete()
         except Exception:
             print("The index " + index_uid + " does not exist. Creating...")
 
