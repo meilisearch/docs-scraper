@@ -74,7 +74,7 @@ $ curl -L https://install.meilisearch.com | sh
 $ ./meilisearch --master-key=myMasterKey
 ```
 
-There are [other ways to install MeiliSearch](https://docs.meilisearch.com/guides/introduction/quick_start_guide.html#download-and-launch).
+There are [other ways to install MeiliSearch](https://docs.meilisearch.com/learn/tutorials/getting_started.html#download-and-launch).
 
 The host URL and the API key you will provide in the next steps correspond to the credentials of this MeiliSearch instance.
 In the example above, the host URL is `http://localhost:7700` and the API key is `myMasterKey`.
@@ -194,7 +194,7 @@ Here is the [GitHub Action file](https://github.com/meilisearch/documentation/bl
 The API key you must provide should have the permissions to add documents into your MeiliSearch instance.<br>
 In a production environment, we recommend providing the private key instead of the master key, as it is safer and it has enough permissions to perform such requests.
 
-_More about [MeiliSearch authentication](https://docs.meilisearch.com/guides/advanced_guides/authentication.html)._
+_More about [MeiliSearch authentication](https://docs.meilisearch.com/reference/features/authentication.html)._
 
 ## 🖌 And for the front-end search bar?
 
@@ -427,12 +427,12 @@ This field can be used to add MeiliSearch settings.
 ##### Synonyms <!-- omit in TOC -->
 
 The synonyms `SGG <=> Static Site Generator` allows the user to find all the results containing "Static Site Generator" with only typing "SSG" (and the opposite).
-Here is the [dedicated page about synonyms](https://docs.meilisearch.com/guides/advanced_guides/synonyms.html) in the official documentation.
+Here is the [dedicated page about synonyms](https://docs.meilisearch.com/reference/features/synonyms.html) in the official documentation.
 
 ##### Stop Words <!-- omit in TOC -->
 
 Because your website might provide content with structured English sentences, we recommend adding stop words. Indeed, the search-engine would not be "spoiled" by linking words and would focus on the main words of the query, rendering more accurate results.<br>
-Here is the [dedicated page about stop-words](https://docs.meilisearch.com/guides/advanced_guides/stop_words.html) in the official documentation.<br>
+Here is the [dedicated page about stop-words](https://docs.meilisearch.com/reference/features/stop_words.html) in the official documentation.<br>
 You can find more complete lists of English stop-words [like this one](https://gist.github.com/sebleier/554280).
 
 
