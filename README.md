@@ -70,8 +70,8 @@ Your documentation content needs to be scraped and pushed into a MeiliSearch ins
 You can install and run MeiliSearch on your machine using `curl`.
 
 ```bash
-$ curl -L https://install.meilisearch.com | sh
-$ ./meilisearch --master-key=myMasterKey
+curl -L https://install.meilisearch.com | sh
+./meilisearch --master-key=myMasterKey
 ```
 
 There are [other ways to install MeiliSearch](https://docs.meilisearch.com/learn/tutorials/getting_started.html#download-and-launch).
@@ -142,8 +142,8 @@ Following on from the example in the [first step](#run-your-meilisearch-instance
 
 Then, run:
 ```bash
-$ pipenv install
-$ pipenv run ./docs_scraper <path-to-your-config-file>
+pipenv install
+pipenv run ./docs_scraper <path-to-your-config-file>
 ```
 
 `<path-to-your-config-file>` should be the path of your configuration file defined at the [previous step](#set-your-config-file).
@@ -151,7 +151,7 @@ $ pipenv run ./docs_scraper <path-to-your-config-file>
 #### With Docker <!-- omit in TOC -->
 
 ```bash
-$ docker run -t --rm \
+docker run -t --rm \
     -e MEILISEARCH_HOST_URL=<your-meilisearch-host-url> \
     -e MEILISEARCH_API_KEY=<your-meilisearch-api-key> \
     -v <absolute-path-to-your-config-file>:/docs-scraper/config.json \
