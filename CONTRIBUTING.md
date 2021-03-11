@@ -35,18 +35,18 @@ Set both environment variables `MEILISEARCH_HOST_URL` and `MEILISEARCH_API_KEY`.
 Then, run:
 
 ```bash
-$ pipenv install
-$ pipenv run ./docs_scraper <path-to-your-config-file>
+pipenv install
+pipenv run ./docs_scraper <path-to-your-config-file>
 ```
 
 ### Linter and Tests <!-- omit in TOC -->
 
 ```bash
-$ pipenv install --dev
+pipenv install --dev
 # Linter
-$ pipenv run pylint scraper
+pipenv run pylint scraper
 # Tests
-$ pipenv run pytest ./scraper/src -k "not _browser"
+pipenv run pytest ./scraper/src -k "not _browser"
 ```
 
 ## Git Guidelines
