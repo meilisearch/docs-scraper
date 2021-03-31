@@ -48,6 +48,9 @@ This scraper is used in production and runs on the [MeiliSearch documentation](h
     - [`custom_settings` (optional)](#custom_settings-optional)
     - [`min_indexed_level` (optional)](#min_indexed_level-optional)
     - [`only_content_level` (optional)](#only_content_level-optional)
+    - [`js_render` (optional)](#js_render-optional)
+    - [`js_wait` (optional)](#js_wait-optional)
+    - [`allowed_domains` (optional)](#allowed_domains-optional)
   - [Authentication](#authentication)
   - [Installing Chrome Headless](#installing-chrome-headless)
 - [🤖 Compatibility with MeiliSearch](#-compatibility-with-meilisearch)
@@ -456,6 +459,41 @@ If used, `min_indexed_level` is ignored.
 ```json
 {
   "only_content_level": true
+}
+```
+
+#### `js_render` (optional)
+
+When `js_render` is set to `true`, the scraper will use ChromeDriver. This is needed for pages that are rendered with JavaScript, for example, pages generated with React, Vue, or applications that are running in development mode: `autoreload` `watch`.
+
+After installing ChromeDriver, provide the path to the bin using the following environment variable `CHROMEDRIVER_PATH` (default value is `/usr/bin/chromedriver`).
+
+The default value of `js_render` is `false`.
+
+```json
+{
+  "js_render": true
+}
+```
+
+#### `js_wait` (optional)
+
+This setting can be used when `js_render` is set to `true` and the pages need time to fully load. `js_wait` takes an integer is specifies the number of seconds the scraper should wait for the page to load.
+
+```json
+{
+  "js_render": true,
+  "js_wait": 1
+}
+```
+
+#### `allowed_domains` (optional)
+
+This setting specifies the domains that the scraper is allowed to access. In most cases the `allowed_domains` will be automatically set using the `start_urls` and `stop_urls`. When scraping a domain that contains a port, for example `http://localhost:8080`, the domain needs to be manually added to the configuration.
+
+```json
+{
+  "allowed_domains": ["localhost"]
 }
 ```
 

@@ -8,6 +8,7 @@ src/strategies/__pycache__/
 *.pyc
 .env
 update.sh
+.python-version
 
 *yarn.lock
 
