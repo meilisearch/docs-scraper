@@ -102,7 +102,6 @@ class ConfigLoader:
             return data
         except ValueError as value_error:
             raise ValueError('CONFIG is not a valid JSON') from value_error
-            sys.exit(EXIT_CODE_WRONG_CONFIG)
 
     def _parse(self):
         # Parse Env
