@@ -9,6 +9,7 @@ src/strategies/__pycache__/
 .env
 update.sh
 .python-version
+.tox
 
 *yarn.lock
 

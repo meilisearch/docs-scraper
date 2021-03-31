@@ -27,14 +27,18 @@ jobs:
         run: pipenv run pylint scraper
 
   unit_tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8, 3.9]
     name: unit-tests
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.8
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: ${{ matrix.python-version }}
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies
@@ -43,14 +47,18 @@ jobs:
         run: pipenv run pytest ./scraper/src -k "not _browser"
 
   integration_tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8, 3.9]
     name: integration-tests
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.8
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: ${{ matrix.python-version }}
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies for production only
