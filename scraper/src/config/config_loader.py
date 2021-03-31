@@ -8,7 +8,6 @@ Load the config json file.
 from collections import OrderedDict
 import json
 import os
-import sys
 import copy
 
 from .config_validator import ConfigValidator

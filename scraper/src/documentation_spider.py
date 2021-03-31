@@ -10,7 +10,6 @@ from scrapy.spiders import SitemapSpider
 from scrapy.spiders.sitemap import regex
 import re
 import os
-import sys
 
 # End of import for the sitemap behavior
 
