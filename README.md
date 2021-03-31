@@ -464,7 +464,11 @@ If used, `min_indexed_level` is ignored.
 
 #### `js_render` (optional)
 
-When `js_render` is set to `true`, The scraper will use ChromeDriver. This is needed for pages that are rendered with JavaScript, for example pages generated with React or Vue. The default value is false.
+When `js_render` is set to `true`, The scraper will use ChromeDriver. This is needed for pages that are rendered with JavaScript, for example pages generated with React, Vue, or applications that are running in development mode: `autoreload` `watch`. 
+
+After installing ChromeDriver, provide the path to the bin using the following environment variable `CHROMEDRIVER_PATH` (default value is `/usr/bin/chromedriver`.
+
+The default value of `js_render` is `false`.
 
 ```json
 {
