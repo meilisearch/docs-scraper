@@ -1,33 +1,22 @@
 # coding: utf-8
 import lxml.html
-from .abstract import get_strategy
+import pytest
+
 from ...strategies.anchor import Anchor
+from .abstract import get_strategy
 
 
-class TestGetAnchor:
-    def test_name_on_heading(self):
-        # Given
-        strategy = get_strategy()
-        strategy.dom = lxml.html.fromstring("""
+@pytest.fixture
+def get_strategy_dom():
+    strategy_dom_variants = {
+        'test_name_on_heading': """
         <html><body>
             <h1>Foo</h1>
             <h2 name="bar">Bar</h2>
             <h3>Baz</h3>
         </body></html>
-        """)
-        level = 'lvl1'
-        element = strategy.select(
-            strategy.config.selectors['default'][level]['selector'])[0]
-
-        # When
-        actual = Anchor.get_anchor(element)
-
-        # Then
-        assert actual == 'bar'
-
-    def test_id_not_in_a_direct_parent(self):
-        strategy = get_strategy()
-        strategy.dom = lxml.html.fromstring("""
+        """,
+        'test_id_not_in_a_direct_parent': """
         <div>
             <a id="bar"></a>
             <div>
@@ -36,69 +25,50 @@ class TestGetAnchor:
                 </div>
             </div>
         </div>
-        """)
-
-        level = 'lvl1'
-        element = strategy.select(
-            strategy.config.selectors['default'][level]['selector'])[0]
-
-        # When
-        actual = Anchor.get_anchor(element)
-
-        # Then
-        assert actual == 'bar'
-
-    def test_id_on_heading(self):
-        # Given
-        strategy = get_strategy()
-        strategy.dom = lxml.html.fromstring("""
+        """,
+        'test_id_on_heading': """
         <html><body>
             <h1>Foo</h1>
             <h2 id="bar">Bar</h2>
             <h3>Baz</h3>
         </body></html>
-        """)
-        level = 'lvl1'
-        element = strategy.select(
-            strategy.config.selectors['default'][level]['selector'])[0]
-
-        # When
-        actual = Anchor.get_anchor(element)
-
-        # Then
-        assert actual == 'bar'
-
-    def test_anchor_in_subelement(self):
-        # Given
-        strategy = get_strategy()
-        strategy.dom = lxml.html.fromstring("""
+        """,
+        'test_anchor_in_subelement': """
         <html><body>
             <h1>Foo</h1>
             <h2><a href="#" name="bar">Bar</a><span></span></h2>
             <h3>Baz</h3>
         </body></html>
-        """)
-        level = 'lvl1'
-        element = strategy.select(
-            strategy.config.selectors['default'][level]['selector'])[0]
-
-        # When
-        actual = Anchor.get_anchor(element)
-
-        # Then
-        assert actual == 'bar'
-
-    def test_no_anchor(self):
-        # Given
-        strategy = get_strategy()
-        strategy.dom = lxml.html.fromstring("""
+        """,
+        "test_no_anchor": """
         <html><body>
             <h1>Foo</h1>
             <h2>Bar</h2>
             <h3>Baz</h3>
         </body></html>
-        """)
-        level = 'lvl2'
+        """,
+    }
+
+    def _get_strategy_dom(test_type):
+        return strategy_dom_variants.get(test_type)
+
+    return _get_strategy_dom
+
+
+class TestGetAnchor:
+
+    @pytest.mark.parametrize('level, anchor, test_type',
+                             [
+                                 ('lvl1', 'bar', 'test_name_on_heading'),
+                                 ('lvl1', 'bar', 'test_id_not_in_a_direct_parent'),
+                                 ('lvl1', 'bar', 'test_id_on_heading'),
+                                 ('lvl1', 'bar', 'test_anchor_in_subelement'),
+                                 ('lvl2', None, 'test_no_anchor'),
+                             ])
+    def test_get_anchor(self, get_strategy_dom, level, anchor, test_type):
+        # Given
+        strategy = get_strategy()
+        strategy.dom = lxml.html.fromstring(get_strategy_dom(test_type))
         element = strategy.select(
             strategy.config.selectors['default'][level]['selector'])[0]
 
@@ -106,4 +76,4 @@ class TestGetAnchor:
         actual = Anchor.get_anchor(element)
 
         # Then
-        assert actual is None
+        assert actual == anchor
