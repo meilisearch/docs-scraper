@@ -1,12 +1,14 @@
 # coding: utf-8
-from .abstract import get_strategy
+import pytest
+
 from ...strategies.hierarchy import Hierarchy
+from .abstract import get_strategy
 
 
-class TestGetHierarchyRadio:
-    def test_toplevel(self):
-        # Given
-        hierarchy = {
+@pytest.fixture
+def get_hierarchy():
+    hierarchy_variants = {
+        'test_toplevel': {
             'lvl0': 'Foo',
             'lvl1': None,
             'lvl2': None,
@@ -14,25 +16,8 @@ class TestGetHierarchyRadio:
             'lvl4': None,
             'lvl5': None,
             'lvl6': None
-        }
-
-        # When
-        strategy = get_strategy()
-        actual = Hierarchy.get_hierarchy_radio(hierarchy, 'lvl0',
-                                               strategy.levels)
-
-        # Then
-        assert actual['lvl0'] == 'Foo'
-        assert actual['lvl1'] is None
-        assert actual['lvl2'] is None
-        assert actual['lvl3'] is None
-        assert actual['lvl4'] is None
-        assert actual['lvl5'] is None
-        assert actual['lvl6'] is None
-
-    def test_sublevel(self):
-        # Given
-        hierarchy = {
+        },
+        'test_sublevel': {
             'lvl0': 'Foo',
             'lvl1': 'Bar',
             'lvl2': 'Baz',
@@ -40,25 +25,8 @@ class TestGetHierarchyRadio:
             'lvl4': None,
             'lvl5': None,
             'lvl6': None
-        }
-
-        # When
-        strategy = get_strategy()
-        actual = Hierarchy.get_hierarchy_radio(hierarchy, 'lvl2',
-                                               strategy.levels)
-
-        # Then
-        assert actual['lvl0'] is None
-        assert actual['lvl1'] is None
-        assert actual['lvl2'] == 'Baz'
-        assert actual['lvl3'] is None
-        assert actual['lvl4'] is None
-        assert actual['lvl5'] is None
-        assert actual['lvl6'] is None
-
-    def test_contentlevel(self):
-        # Given
-        hierarchy = {
+        },
+        'test_contentlevel': {
             'lvl0': 'Foo',
             'lvl1': 'Bar',
             'lvl2': 'Baz',
@@ -66,17 +34,42 @@ class TestGetHierarchyRadio:
             'lvl4': None,
             'lvl5': None,
             'lvl6': None
-        }
+        },
+    }
+
+    def _get_hierarchy(test_type):
+        return hierarchy_variants.get(test_type)
+
+    return _get_hierarchy
+
+
+class TestGetHierarchyRadio:
+
+    @pytest.mark.parametrize('level, test_type',
+                             [
+                                 ('lvl0', 'test_toplevel'),
+                                 ('lvl2', 'test_sublevel'),
+                                 ('content', 'test_contentlevel'),
+                             ])
+    def test_get_hierarchy_radio(self, get_hierarchy, level, test_type):
+        # Given
+        hierarchy = get_hierarchy(test_type)
 
         # When
         strategy = get_strategy()
-        actual = Hierarchy.get_hierarchy_radio(hierarchy, 'content',
+        actual = Hierarchy.get_hierarchy_radio(hierarchy, level,
                                                strategy.levels)
 
         # Then
-        assert actual['lvl0'] is None
+        if test_type == 'test_toplevel':
+            assert actual['lvl0'] == 'Foo'
+        else:
+            assert actual['lvl0'] is None
         assert actual['lvl1'] is None
-        assert actual['lvl2'] is None
+        if test_type == 'test_sublevel':
+            assert actual['lvl2'] == 'Baz'
+        else:
+            assert actual['lvl2'] is None
         assert actual['lvl3'] is None
         assert actual['lvl4'] is None
         assert actual['lvl5'] is None
