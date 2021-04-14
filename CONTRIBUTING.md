@@ -49,6 +49,12 @@ pipenv run pylint scraper
 pipenv run pytest ./scraper/src -k "not _browser"
 ```
 
+Optionally tox can be used to run test on all supported version of Python and linting.
+
+```bash
+pipenv run tox
+```
+
 ## Git Guidelines
 
 ### Git Branches <!-- omit in TOC -->

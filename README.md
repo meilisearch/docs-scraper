@@ -136,7 +136,7 @@ In our case, the main container is `theme-default-content` and the selector the 
 
 #### From Source Code <!-- omit in TOC -->
 
-This project supports Python 3.8.
+This project supports Python 3.8 and above.
 
 The [`pipenv` command](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) must be installed.
 

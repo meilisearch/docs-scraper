@@ -1,3 +1,10 @@
-status = ['unit-tests', 'integration-tests', 'linter', 'image-build']
+status = [
+  'unit-tests (3.8)',
+  'unit-tests (3.9)',
+  'integration-tests (3.8)',
+  'integration-tests (3.9)',
+  'linter',
+  'image-build',
+]
 # 1 hour timeout
 timeout-sec = 3600
