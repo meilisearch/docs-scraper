@@ -9,17 +9,4 @@ updates:
   labels:
   - skip-changelog
   - dependencies
-  ignore:
-  - dependency-name: pytest
-    versions:
-    - "> 6.0.0, < 6.1"
-  - dependency-name: pytest
-    versions:
-    - "> 6.1.0, < 6.2"
-  - dependency-name: pytest
-    versions:
-    - "> 6.2.0, < 6.3"
-  - dependency-name: scrapy
-    versions:
-    - ">= 1.8.a, < 1.9"
   rebase-strategy: disabled
