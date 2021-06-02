@@ -45,8 +45,6 @@ pipenv run ./docs_scraper <path-to-your-config-file>
 pipenv install --dev
 # Linter
 pipenv run pylint scraper
-# Tests
-pipenv run pytest ./scraper/src -k "not _browser"
 ```
 
 If you have chromedriver install you can run the full test suite by passing the path to your
