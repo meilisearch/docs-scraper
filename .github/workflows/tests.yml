@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pipenv install --dev
       - name: Linter with pylint
-        run: pipenv run pylint
+        run: pipenv run pylint scraper
 
   unit_tests:
     strategy:
