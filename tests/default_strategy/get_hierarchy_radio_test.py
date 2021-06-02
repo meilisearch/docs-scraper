@@ -1,6 +1,6 @@
 # coding: utf-8
 from .abstract import get_strategy
-from ...strategies.hierarchy import Hierarchy
+from scraper.src.strategies.hierarchy import Hierarchy
 
 
 class TestGetHierarchyRadio:

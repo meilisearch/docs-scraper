@@ -1,5 +1,7 @@
 # coding: utf-8
-from ...config.config_loader import ConfigLoader
+import pytest
+
+from scraper.src.config.config_loader import ConfigLoader
 from .abstract import config
 from .mocked_init import MockedInit
 
@@ -11,11 +13,12 @@ class TestGetExtraFacets:
 
         assert actual.get_extra_facets() == []
 
+    @pytest.mark.chromedriver
+    @pytest.mark.usefixtures("chromedriver")
     def test_extra_facets_should_be_set_from_start_urls_variables_browser(self,
                                                                           monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
-        monkeypatch.setattr("time.sleep", lambda x: "")
 
         c = config({
             "start_urls": [
@@ -34,13 +37,15 @@ class TestGetExtraFacets:
 
         assert actual.get_extra_facets() == ["type_of_content"]
 
+    @pytest.mark.chromedriver
+    @pytest.mark.usefixtures("chromedriver")
     def test_extra_facets_should_be_set_from_start_urls_variables_with_two_start_url_browser(
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
-        monkeypatch.setattr("time.sleep", lambda x: "")
 
         c = config({
+            "js-render": True,
             "start_urls": [
                 {
                     "url": "https://test.com/doc/(?P<type_of_content>.*?)/",
@@ -63,11 +68,12 @@ class TestGetExtraFacets:
 
         assert actual.get_extra_facets() == ["type_of_content"]
 
+    @pytest.mark.chromedriver
+    @pytest.mark.usefixtures("chromedriver")
     def test_extra_facets_should_be_set_from_start_urls_variables_with_multiple_tags_browser(
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
-        monkeypatch.setattr("time.sleep", lambda x: "")
 
         c = config({
             "start_urls": [

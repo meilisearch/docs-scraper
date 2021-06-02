@@ -49,10 +49,45 @@ pipenv run pylint scraper
 pipenv run pytest ./scraper/src -k "not _browser"
 ```
 
+If you have chromedriver install you can run the full test suite by passing the path to your
+chromedrive
+
+```bash
+pipenv run pytest --chromedriver=/path/to/your/chromedriver
+```
+
+Where `path/to/your/chromedriver` matches your particular path. If you are unsure of your
+chromedriver path you find it on Linux/Mac with:
+
+```bash
+which chromedriver
+```
+
+Or on Windwos with:
+
+```bash
+where chromedriver
+```
+
+If you do not have chromedriver installed you can skip the tests that require it by running the
+tests with:
+
+```bash
+pipenv run pytest -m "not chromedriver"
+```
+
+Note that these tests will still run in CI when you submit your pull request.
+
 Optionally tox can be used to run test on all supported version of Python and linting.
 
 ```bash
-pipenv run tox
+pipenv run tox -- --chromedriver=/path/to/your/chromedriver
+```
+
+Or to run tox if you don't have chromedriver
+
+```bash
+pipenv run tox -- -m "not chromedriver"
 ```
 
 ## Git Guidelines
