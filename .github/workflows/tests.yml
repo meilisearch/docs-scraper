@@ -76,7 +76,7 @@ jobs:
         env:
           MEILISEARCH_HOST_URL: 'http://127.0.0.1:7700'
           MEILISEARCH_API_KEY: 'masterKey'
-          CONFIG_FILE: 'scraper/src/tests/config_files_examples/docs-custom.config.json'
+          CONFIG_FILE: 'tests/config_files_examples/docs-custom.config.json'
 
   image_build:
     name: image-build
