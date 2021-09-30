@@ -47,15 +47,14 @@ pipenv install --dev
 pipenv run pylint scraper
 ```
 
-If you have chromedriver install you can run the full test suite by passing the path to your
-chromedrive
+If you have [a `chromedriver`](https://sites.google.com/chromium.org/driver/), you can run the full test suite by passing the path to your `chromedriver`.
 
 ```bash
 pipenv run pytest --chromedriver=/path/to/your/chromedriver
 ```
 
-Where `path/to/your/chromedriver` matches your particular path. If you are unsure of your
-chromedriver path you find it on Linux/Mac with:
+Where `path/to/your/chromedriver` matches your particular path. If you are unsure of your `chromedriver` path you find it on Linux/Mac with:
+
 
 ```bash
 which chromedriver
@@ -67,8 +66,9 @@ Or on Windwos with:
 where chromedriver
 ```
 
-If you do not have chromedriver installed you can skip the tests that require it by running the
-tests with:
+It is possible when running the tests that an error occurs if your running chrome browser has a different version than your chromedriver. In which case, please download the adequate [chromedriver](https://sites.google.com/chromium.org/driver/).
+
+If you do not have `chromedriver` installed you can skip the tests that require it by running the tests with:
 
 ```bash
 pipenv run pytest -m "not chromedriver"
