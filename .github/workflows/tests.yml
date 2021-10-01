@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pipenv install --dev
       - name: Run tests
-        run: pipenv run pytest ./scraper/src -k "not _browser"
+        run: pipenv run pytest
 
   integration_tests:
     strategy:
@@ -70,13 +70,13 @@ jobs:
         env:
           MEILISEARCH_HOST_URL: 'http://127.0.0.1:7700'
           MEILISEARCH_API_KEY: 'masterKey'
-          CONFIG_FILE: 'scraper/src/tests/config_files_examples/docs-basics.config.json'
+          CONFIG_FILE: 'tests/config_files_examples/docs-basics.config.json'
       - name: Run the scraper with custom config
         run: pipenv run ./docs_scraper $CONFIG_FILE
         env:
           MEILISEARCH_HOST_URL: 'http://127.0.0.1:7700'
           MEILISEARCH_API_KEY: 'masterKey'
-          CONFIG_FILE: 'scraper/src/tests/config_files_examples/docs-custom.config.json'
+          CONFIG_FILE: 'tests/config_files_examples/docs-custom.config.json'
 
   image_build:
     name: image-build

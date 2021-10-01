@@ -1,7 +1,7 @@
 # coding: utf-8
 import pytest
 
-from ...config.config_loader import ConfigLoader
+from scraper.src.config.config_loader import ConfigLoader
 from .abstract import config
 
 

@@ -1,7 +1,7 @@
 # coding: utf-8
 import pytest
 
-from ...config.config_loader import ConfigLoader
+from scraper.src.config.config_loader import ConfigLoader
 from .abstract import config
 from .mocked_init import MockedInit
 
@@ -69,11 +69,12 @@ class TestStartUrls:
         # Then
         assert actual.start_urls[0]['url'] == 'http://www.foo.bar/'
 
+    @pytest.mark.chromedriver
+    @pytest.mark.usefixtures("chromedriver")
     def test_start_urls_should_be_generated_when_there_is_automatic_tagging_browser(
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
-        monkeypatch.setattr("time.sleep", lambda x: "")
 
         # When
         c = config({

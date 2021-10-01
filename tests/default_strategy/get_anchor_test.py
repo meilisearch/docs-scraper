@@ -1,7 +1,7 @@
 # coding: utf-8
 import lxml.html
 from .abstract import get_strategy
-from ...strategies.anchor import Anchor
+from scraper.src.strategies.anchor import Anchor
 
 
 class TestGetAnchor:

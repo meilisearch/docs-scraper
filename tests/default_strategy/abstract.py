@@ -1,8 +1,8 @@
 # coding: utf-8
 import json
 
-from ...config.config_loader import ConfigLoader
-from ...strategies.default_strategy import DefaultStrategy
+from scraper.src.config.config_loader import ConfigLoader
+from scraper.src.strategies.default_strategy import DefaultStrategy
 
 SELECTORS = {
     "lvl0": "h1",
