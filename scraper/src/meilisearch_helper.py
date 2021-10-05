@@ -52,9 +52,9 @@ class MeiliSearchHelper:
             'attribute',
             'proximity',
             'exactness',
-            'desc(page_rank)',
-            'desc(level)',
-            'asc(position)'
+            'page_rank:desc',
+            'level:desc',
+            'position:asc'
         ],
         'distinctAttribute': 'url',
         'searchableAttributes': [
