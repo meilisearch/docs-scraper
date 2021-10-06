@@ -10,6 +10,7 @@ pytest = "==6.2.3"
 meilisearch = "==0.16.1"
 requests-iap = "==0.2.0"
 python-keycloak-client = "==0.2.3"
+webdriver-manager = "*"
 
 [dev-packages]
 pylint = "==2.8.2"
