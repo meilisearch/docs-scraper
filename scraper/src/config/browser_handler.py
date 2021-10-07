@@ -1,6 +1,6 @@
 import re
 import os
-from sys import platform
+import sys
 from distutils.util import strtobool
 from selenium import webdriver
 
@@ -51,19 +51,19 @@ class BrowserHandler:
                         print("Could not download ChromeDriver. "
                               "Please install ChromeDriver manually.")
                         print(e)
-                        if platform == "linux" or platform == "darwin":
+                        if sys.platform == "linux" or sys.platform == "darwin":
                             os.system('read -s -n 1 -p "Press any key to continue..."')
-                        if platform == "win32":
+                        if sys.platform == "win32":
                             os.system('pause')
-                        exit(1)
+                        sys.exit(1)
                 else:
                     print("Please install ChromeDriver and set the CHROMEDRIVER_PATH "
                           "environment variable or remove the render_js option.")
-                    if platform == "linux" or platform == "darwin":
+                    if sys.platform == "linux" or sys.platform == "darwin":
                         os.system('read -s -n 1 -p "Press any key to continue..."')
-                    if platform == "win32":
+                    if sys.platform == "win32":
                         os.system('pause')
-                    exit(1)
+                    sys.exit(1)
 
             driver = webdriver.Chrome(
                 CHROMEDRIVER_PATH,

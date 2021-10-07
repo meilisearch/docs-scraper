@@ -5,6 +5,7 @@ from scraper.src.config.config_loader import ConfigLoader
 from .abstract import config
 from .mocked_init import MockedInit
 
+
 class TestGetExtraFacets:
     def test_extra_facets_should_be_empty_by_default(self):
         c = config()
@@ -19,6 +20,7 @@ class TestGetExtraFacets:
                                                                           monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         c = config({
             "start_urls": [
@@ -43,6 +45,7 @@ class TestGetExtraFacets:
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         c = config({
             "js-render": True,
@@ -74,6 +77,7 @@ class TestGetExtraFacets:
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         c = config({
             "start_urls": [
