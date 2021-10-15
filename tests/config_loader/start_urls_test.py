@@ -75,6 +75,7 @@ class TestStartUrls:
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         # When
         c = config({

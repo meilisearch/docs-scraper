@@ -21,6 +21,7 @@ class TestOpenSeleniumBrowser:
     def test_browser_needed_when_js_render_true(self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
         # When
         c = config({
             "js_render": True
@@ -37,6 +38,7 @@ class TestOpenSeleniumBrowser:
                                                                monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         # When
         c = config({

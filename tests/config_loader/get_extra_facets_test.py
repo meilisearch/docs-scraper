@@ -19,6 +19,7 @@ class TestGetExtraFacets:
                                                                           monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         c = config({
             "start_urls": [
@@ -43,6 +44,7 @@ class TestGetExtraFacets:
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         c = config({
             "js-render": True,
@@ -74,6 +76,7 @@ class TestGetExtraFacets:
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
+        monkeypatch.setattr('builtins.input', lambda _: "y")
 
         c = config({
             "start_urls": [

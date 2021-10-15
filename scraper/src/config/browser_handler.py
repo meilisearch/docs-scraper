@@ -1,8 +1,11 @@
 import re
 import os
+import sys
+from distutils.util import strtobool
 from selenium import webdriver
 
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 from ..custom_downloader_middleware import CustomDownloaderMiddleware
 from ..js_executor import JsExecutor
 
@@ -26,12 +29,42 @@ class BrowserHandler:
             chrome_options.add_argument('--headless')
             chrome_options.add_argument('user-agent={0}'.format(user_agent))
 
-            CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH',
-                                               "/usr/bin/chromedriver")
-            if not os.path.isfile(CHROMEDRIVER_PATH):
-                raise Exception(
-                    "Env CHROMEDRIVER_PATH='{}' is not a path to a file".format(
-                        CHROMEDRIVER_PATH))
+            CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '')
+            if not CHROMEDRIVER_PATH or not os.path.isfile(CHROMEDRIVER_PATH):
+                print("Could not find ChromeDriver.")
+                print("Either the Env CHROMEDRIVER_PATH='{}' path is incorrect or "
+                      "ChromeDriver is not installed.".format(CHROMEDRIVER_PATH))
+                print("Do you want to automatically download ChromeDriver?")
+                while(True):
+                    user_input = input("[Y/n]: ")
+                    try:
+                        yes = strtobool(user_input)
+                        break
+                    except ValueError:
+                        print("Please enter a valid input.")
+                        continue
+                if yes:
+                    try:
+                        CHROMEDRIVER_PATH = ChromeDriverManager().install()
+
+                    except Exception as e:
+                        print("Could not download ChromeDriver. "
+                              "Please install ChromeDriver manually.")
+                        print(e)
+                        if sys.platform == "linux" or sys.platform == "darwin":
+                            os.system('read -s -n 1 -p "Press any key to continue..."')
+                        if sys.platform == "win32":
+                            os.system('pause')
+                        sys.exit(1)
+                else:
+                    print("Please install ChromeDriver and set the CHROMEDRIVER_PATH "
+                          "environment variable or remove the render_js option.")
+                    if sys.platform == "linux" or sys.platform == "darwin":
+                        os.system('read -s -n 1 -p "Press any key to continue..."')
+                    if sys.platform == "win32":
+                        os.system('pause')
+                    sys.exit(1)
+
             driver = webdriver.Chrome(
                 CHROMEDRIVER_PATH,
                 options=chrome_options)

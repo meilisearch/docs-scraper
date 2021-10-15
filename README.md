@@ -466,7 +466,7 @@ If used, `min_indexed_level` is ignored.
 
 When `js_render` is set to `true`, the scraper will use ChromeDriver. This is needed for pages that are rendered with JavaScript, for example, pages generated with React, Vue, or applications that are running in development mode: `autoreload` `watch`.
 
-After installing ChromeDriver, provide the path to the bin using the following environment variable `CHROMEDRIVER_PATH` (default value is `/usr/bin/chromedriver`).
+After installing ChromeDriver, provide the path to the bin using the following environment variable `CHROMEDRIVER_PATH`. If the variable is not set, the scraper will automatically download and use a compatible version of ChromeDriver.
 
 The default value of `js_render` is `false`.
 
@@ -530,7 +530,7 @@ Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 
 ## 🤖 Compatibility with MeiliSearch
 
-This package only guarantees the compatibility with the [version v0.23.0 of MeiliSearch](https://github.com/meilisearch/MeiliSearch/releases/tag/v0.23.0).
+This package only guarantees the compatibility with the [version v0.22.0 of MeiliSearch](https://github.com/meilisearch/MeiliSearch/releases/tag/v0.22.0).
 
 ## ⚙️ Development Workflow and Contributing
 
