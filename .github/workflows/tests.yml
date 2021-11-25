@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: pipenv install --dev
       - name: Run tests
-        run: pipenv run pytest
+        run: pipenv run pytest -m "not chromedriver"
 
   integration_tests:
     strategy:
