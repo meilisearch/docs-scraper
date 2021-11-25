@@ -15,12 +15,13 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - name: Install pipenv
+        run: pipx install pipenv
       - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Install pipenv
-        uses: dschep/install-pipenv-action@v1
+          cache: "pipenv"
       - name: Install dependencies
         run: pipenv install --dev
       - name: Linter with pylint
@@ -35,12 +36,13 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - name: Install pipenv
+        run: pipx install pipenv
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install pipenv
-        uses: dschep/install-pipenv-action@v1
+          cache: "pipenv"
       - name: Install dependencies
         run: pipenv install --dev
       - name: Run tests
@@ -55,12 +57,13 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - name: Install pipenv
+        run: pipx install pipenv
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install pipenv
-        uses: dschep/install-pipenv-action@v1
+          cache: "pipenv"
       - name: Install dependencies for production only
         run: pipenv install
       - name: MeiliSearch setup with Docker
@@ -68,15 +71,15 @@ jobs:
       - name: Run the scraper with basic config
         run: pipenv run ./docs_scraper $CONFIG_FILE
         env:
-          MEILISEARCH_HOST_URL: 'http://127.0.0.1:7700'
-          MEILISEARCH_API_KEY: 'masterKey'
-          CONFIG_FILE: 'tests/config_files_examples/docs-basics.config.json'
+          MEILISEARCH_HOST_URL: "http://127.0.0.1:7700"
+          MEILISEARCH_API_KEY: "masterKey"
+          CONFIG_FILE: "tests/config_files_examples/docs-basics.config.json"
       - name: Run the scraper with custom config
         run: pipenv run ./docs_scraper $CONFIG_FILE
         env:
-          MEILISEARCH_HOST_URL: 'http://127.0.0.1:7700'
-          MEILISEARCH_API_KEY: 'masterKey'
-          CONFIG_FILE: 'tests/config_files_examples/docs-custom.config.json'
+          MEILISEARCH_HOST_URL: "http://127.0.0.1:7700"
+          MEILISEARCH_API_KEY: "masterKey"
+          CONFIG_FILE: "tests/config_files_examples/docs-custom.config.json"
 
   image_build:
     name: image-build
