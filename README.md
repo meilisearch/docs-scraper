@@ -540,7 +540,7 @@ If you want to know more about the development workflow or want to contribute, p
 
 ## Credits
 
-Based on [Algolia's docsearch scraper repository](https://github.com/algolia/docsearch-scraper) from [this commit](https://github.com/curquiza/docsearch-scraper/commit/aab0888989b3f7a4f534979f0148f471b7c435ee).<br>
+Based on [Algolia's docsearch scraper repository](https://github.com/algolia/docsearch-scraper) from [this commit](https://github.com/algolia/docsearch-scraper/commit/aab0888989b3f7a4f534979f0148f471b7c435ee).<br>
 Due to a lot of future changes on this repository compared to the original one, we don't maintain it as an official fork.
 
 <hr>
