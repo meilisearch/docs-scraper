@@ -100,7 +100,7 @@ class MeiliSearchHelper:
 
     def __init__(self, host_url, api_key, index_uid, custom_settings):
         self.meilisearch_client = meilisearch.Client(host_url, api_key)
-        self.meilisearch_index = self.__delete_and_create_index(index_uid)
+        self.meilisearch_index = self.meilisearch_client.index(index_uid)
         self.add_settings(MeiliSearchHelper.SETTINGS, custom_settings)
 
     def add_settings(self, default_settings, custom_settings):
@@ -121,14 +121,6 @@ class MeiliSearchHelper:
         print(
             '\033[{}m> Docs-Scraper: \033[0m{}\033[93m {} records\033[0m)'.format(
                 color, url, record_count))
-
-    def __delete_and_create_index(self, index_uid):
-        try:
-            self.meilisearch_client.index(index_uid).delete()
-        except Exception:
-            print("The index " + index_uid + " does not exist. Creating...")
-
-        return self.meilisearch_client.create_index(index_uid, {'primaryKey': 'objectID'})
 
 # Algolia's settings:
     # {"minWordSizefor1Typo"=>3,
