@@ -5,7 +5,7 @@
 <h1 align="center">docs-scraper</h1>
 
 <h4 align="center">
-  <a href="https://github.com/meilisearch/Meilisearch">Meilisearch</a> |
+  <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
   <a href="https://docs.meilisearch.com">Documentation</a> |
   <a href="https://slack.meilisearch.com">Slack</a> |
   <a href="https://roadmap.meilisearch.com/tabs/1-under-consideration">Roadmap</a> |
@@ -21,7 +21,7 @@
 
 **docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **Meilisearch** instance.
 
-**Meilisearch** is an open-source search engine. [Discover what Meilisearch is!](https://github.com/meilisearch/Meilisearch)
+**Meilisearch** is an open-source search engine. [Discover what Meilisearch is!](https://github.com/meilisearch/meilisearch)
 
 This scraper is used in production and runs on the [Meilisearch documentation](https://docs.meilisearch.com/) on each deployment.
 
@@ -530,7 +530,7 @@ Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 
 ## 🤖 Compatibility with Meilisearch
 
-This package only guarantees the compatibility with the [version v0.25.0 of Meilisearch](https://github.com/meilisearch/Meilisearch/releases/tag/v0.25.0).
+This package only guarantees the compatibility with the [version v0.25.0 of Meilisearch](https://github.com/meilisearch/meilisearch/releases/tag/v0.25.0).
 
 ## ⚙️ Development Workflow and Contributing
 
