@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="MeiliSearch" width="200" height="200" />
+  <img src="https://raw.githubusercontent.com/meilisearch/integration-guides/main/assets/logos/logo.svg" alt="Meilisearch" width="200" height="200" />
 </p>
 
 <h1 align="center">docs-scraper</h1>
 
 <h4 align="center">
-  <a href="https://github.com/meilisearch/MeiliSearch">MeiliSearch</a> |
+  <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
   <a href="https://docs.meilisearch.com">Documentation</a> |
   <a href="https://slack.meilisearch.com">Slack</a> |
   <a href="https://roadmap.meilisearch.com/tabs/1-under-consideration">Roadmap</a> |
@@ -19,18 +19,18 @@
   <a href="https://app.bors.tech/repositories/28977"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
 </p>
 
-**docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **MeiliSearch** instance.
+**docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **Meilisearch** instance.
 
-**MeiliSearch** is an open-source search engine. [Discover what MeiliSearch is!](https://github.com/meilisearch/MeiliSearch)
+**Meilisearch** is an open-source search engine. [Discover what Meilisearch is!](https://github.com/meilisearch/meilisearch)
 
-This scraper is used in production and runs on the [MeiliSearch documentation](https://docs.meilisearch.com/) on each deployment.
+This scraper is used in production and runs on the [Meilisearch documentation](https://docs.meilisearch.com/) on each deployment.
 
-💡 If you already have your own scraper but you still want to use MeiliSearch and our [front-end tools](#-and-for-the-front-end-search-bar), check out [this discussion](https://github.com/meilisearch/docs-searchbar.js/issues/40).
+💡 If you already have your own scraper but you still want to use Meilisearch and our [front-end tools](#-and-for-the-front-end-search-bar), check out [this discussion](https://github.com/meilisearch/docs-searchbar.js/issues/40).
 
 ## Table of Contents <!-- omit in TOC -->
 
 - [⚙️ Usage](#️-usage)
-  - [Run your MeiliSearch Instance](#run-your-meilisearch-instance)
+  - [Run your Meilisearch Instance](#run-your-meilisearch-instance)
   - [Set your Config File](#set-your-config-file)
   - [Run the Scraper](#run-the-scraper)
 - [🖌 And for the front-end search bar?](#-and-for-the-front-end-search-bar)
@@ -53,7 +53,7 @@ This scraper is used in production and runs on the [MeiliSearch documentation](h
     - [`allowed_domains` (optional)](#allowed_domains-optional)
   - [Authentication](#authentication)
   - [Installing Chrome Headless](#installing-chrome-headless)
-- [🤖 Compatibility with MeiliSearch](#-compatibility-with-meilisearch)
+- [🤖 Compatibility with Meilisearch](#-compatibility-with-meilisearch)
 - [⚙️ Development Workflow and Contributing](#️-development-workflow-and-contributing)
 - [Credits](#credits)
 
@@ -62,27 +62,27 @@ This scraper is used in production and runs on the [MeiliSearch documentation](h
 
 Here are the 3 steps to use `docs-scraper`:
 
-1. [Run a MeiliSearch instance](#run-your-meilisearch-instance)
+1. [Run a Meilisearch instance](#run-your-meilisearch-instance)
 2. [Set your config file](#set-your-config-file)
 3. [Run the scraper](#run-the-scraper)
 
-### Run your MeiliSearch Instance
+### Run your Meilisearch Instance
 
-Your documentation content needs to be scraped and pushed into a MeiliSearch instance.
+Your documentation content needs to be scraped and pushed into a Meilisearch instance.
 
-You can install and run MeiliSearch on your machine using `curl`.
+You can install and run Meilisearch on your machine using `curl`.
 
 ```bash
 curl -L https://install.meilisearch.com | sh
 ./meilisearch --master-key=myMasterKey
 ```
 
-There are [other ways to install MeiliSearch](https://docs.meilisearch.com/learn/tutorials/getting_started.html#download-and-launch).
+There are [other ways to install Meilisearch](https://docs.meilisearch.com/learn/tutorials/getting_started.html#download-and-launch).
 
-The host URL and the API key you will provide in the next steps correspond to the credentials of this MeiliSearch instance.
+The host URL and the API key you will provide in the next steps correspond to the credentials of this Meilisearch instance.
 In the example above, the host URL is `http://localhost:7700` and the API key is `myMasterKey`.
 
-_MeiliSearch is open-source and can run either on your server or on any cloud provider. Here is a tutorial to [run MeiliSearch in production](https://docs.meilisearch.com/running-production/)._
+_Meilisearch is open-source and can run either on your server or on any cloud provider. Here is a tutorial to [run Meilisearch in production](https://docs.meilisearch.com/running-production/)._
 
 
 ### Set your Config File
@@ -117,7 +117,7 @@ Here is an example of a basic config file:
   }
 }
 ```
-The `index_uid` field is the index identifier in your MeiliSearch instance in which your website content is stored. The scraping tool will create a new index if it does not exist.
+The `index_uid` field is the index identifier in your Meilisearch instance in which your website content is stored. The scraping tool will create a new index if it does not exist.
 
 The `docs-content` class (the `.` means this is a class) is the main container of the textual content in this example. Most of the time, this tag is a `<main>` or an `<article>` HTML element.
 
@@ -163,7 +163,7 @@ docker run -t --rm \
 
 `<absolute-path-to-your-config-file>` should be the absolute path of your configuration file defined at the [previous step](#set-your-config-file).
 
-⚠️ If you run MeiliSearch locally, you must add the `--network=host` option to this Docker command.
+⚠️ If you run Meilisearch locally, you must add the `--network=host` option to this Docker command.
 
 #### In a GitHub Action <!-- omit in TOC -->
 
@@ -190,14 +190,14 @@ run-scraper:
 
 ⚠️ We do not recommend using the `latest` image in production. Use the [release tags](https://github.com/meilisearch/docs-scraper/releases) instead.
 
-Here is the [GitHub Action file](https://github.com/meilisearch/documentation/blob/master/.github/workflows/gh-pages-scraping.yml) we use in production for the MeiliSearch documentation.
+Here is the [GitHub Action file](https://github.com/meilisearch/documentation/blob/master/.github/workflows/gh-pages-scraping.yml) we use in production for the Meilisearch documentation.
 
 #### About the API Key <!-- omit in TOC -->
 
-The API key you must provide should have the permissions to add documents into your MeiliSearch instance.<br>
+The API key you must provide should have the permissions to add documents into your Meilisearch instance.<br>
 In a production environment, we recommend providing the private key instead of the master key, as it is safer and it has enough permissions to perform such requests.
 
-_More about [MeiliSearch authentication](https://docs.meilisearch.com/reference/features/authentication.html)._
+_More about [Meilisearch authentication](https://docs.meilisearch.com/reference/features/authentication.html)._
 
 ## 🖌 And for the front-end search bar?
 
@@ -256,7 +256,7 @@ Your data will be displayed with a main title (`lvl0`), sub-titles (`lvl1`), sub
 
 #### `index_uid`
 
-The `index_uid` field is the index identifier in your MeiliSearch instance in which your website content is stored. The scraping tool will create a new index if it does not exist.
+The `index_uid` field is the index identifier in your Meilisearch instance in which your website content is stored. The scraping tool will create a new index if it does not exist.
 
 ```json
 {
@@ -411,7 +411,7 @@ This can be used to remove a table of content, a sidebar, or a footer, to make o
 
 #### `custom_settings` (optional)
 
-This field can be used to add MeiliSearch settings.
+This field can be used to add Meilisearch settings.
 
 ```json
 "custom_settings": {
@@ -528,9 +528,9 @@ If you set the environment variables `KC_URL`, `KC_REALM`, `KC_CLIENT_ID`, and `
 Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 [Download the version](http://chromedriver.chromium.org/downloads) suited to your OS and then set the environment variable `CHROMEDRIVER_PATH`.
 
-## 🤖 Compatibility with MeiliSearch
+## 🤖 Compatibility with Meilisearch
 
-This package only guarantees the compatibility with the [version v0.25.0 of MeiliSearch](https://github.com/meilisearch/MeiliSearch/releases/tag/v0.25.0).
+This package only guarantees the compatibility with the [version v0.25.0 of Meilisearch](https://github.com/meilisearch/meilisearch/releases/tag/v0.25.0).
 
 ## ⚙️ Development Workflow and Contributing
 
@@ -545,4 +545,4 @@ Due to a lot of future changes on this repository compared to the original one, 
 
 <hr>
 
-**MeiliSearch** provides and maintains many **SDKs and Integration tools** like this one. We want to provide everyone with an **amazing search experience for any kind of project**. If you want to contribute, make suggestions, or just know what's going on right now, visit us in the [integration-guides](https://github.com/meilisearch/integration-guides) repository.
+**Meilisearch** provides and maintains many **SDKs and Integration tools** like this one. We want to provide everyone with an **amazing search experience for any kind of project**. If you want to contribute, make suggestions, or just know what's going on right now, visit us in the [integration-guides](https://github.com/meilisearch/integration-guides) repository.

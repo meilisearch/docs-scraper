@@ -1,5 +1,5 @@
 """MeiliSearchHelper
-Wrapper on top of the MeiliSearch API client"""
+Wrapper on top of the Meilisearch API client"""
 
 import meilisearch
 from builtins import range

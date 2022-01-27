@@ -1,6 +1,6 @@
 # Contributing <!-- omit in TOC -->
 
-First of all, thank you for contributing to MeiliSearch! The goal of this document is to provide everything you need to know in order to contribute to MeiliSearch and its different integrations.
+First of all, thank you for contributing to Meilisearch! The goal of this document is to provide everything you need to know in order to contribute to Meilisearch and its different integrations.
 
 - [Assumptions](#assumptions)
 - [How to Contribute](#how-to-contribute)
@@ -11,8 +11,8 @@ First of all, thank you for contributing to MeiliSearch! The goal of this docume
 ## Assumptions
 
 1. **You're familiar with [GitHub](https://github.com) and the [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)(PR) workflow.**
-2. **You've read the MeiliSearch [documentation](https://docs.meilisearch.com) and the [README](/README.md).**
-3. **You know about the [MeiliSearch community](https://docs.meilisearch.com/learn/what_is_meilisearch/contact.html). Please use this for help.**
+2. **You've read the Meilisearch [documentation](https://docs.meilisearch.com) and the [README](/README.md).**
+3. **You know about the [Meilisearch community](https://docs.meilisearch.com/learn/what_is_meilisearch/contact.html). Please use this for help.**
 
 ## How to Contribute
 
@@ -117,7 +117,7 @@ Some notes on GitHub PRs:
 
 ## Release Process (for internal team only)
 
-MeiliSearch tools follow the [Semantic Versioning Convention](https://semver.org/).
+Meilisearch tools follow the [Semantic Versioning Convention](https://semver.org/).
 
 ### Automation to Rebase and Merge the PRs <!-- omit in TOC -->
 

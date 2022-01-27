@@ -44,7 +44,7 @@ class ConfigLoader:
     strict_redirect = True
     strip_chars = u".,;:§¶"
     use_anchors = False
-    user_agent = 'MeiliSearch docs-scraper'
+    user_agent = 'Meilisearch docs-scraper'
     only_content_level = False
     query_rules = []
 
