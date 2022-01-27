@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Meilisearch" width="200" height="200" />
+  <img src="https://raw.githubusercontent.com/meilisearch/integration-guides/main/assets/logos/logo.svg" alt="Meilisearch" width="200" height="200" />
 </p>
 
 <h1 align="center">docs-scraper</h1>
