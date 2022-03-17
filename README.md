@@ -16,7 +16,7 @@
 <p align="center">
   <a href="https://github.com/meilisearch/docs-scraper/actions"><img src="https://github.com/meilisearch/docs-scraper/workflows/Tests/badge.svg" alt="GitHub Workflow Status"></a>
   <a href="https://github.com/meilisearch/docs-scraper/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational" alt="License"></a>
-  <a href="https://app.bors.tech/repositories/28977"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
+  <a href="https://ms-bors.herokuapp.com/repositories/44"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
 </p>
 
 **docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **Meilisearch** instance.
