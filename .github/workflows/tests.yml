@@ -67,7 +67,7 @@ jobs:
       - name: Install dependencies for production only
         run: pipenv install
       - name: Meilisearch setup with Docker
-        run: docker run -d -p 7700:7700 getmeili/meilisearch:latest ./meilisearch --no-analytics --master-key=masterKey
+        run: docker run -d -p 7700:7700 getmeili/meilisearch:latest meilisearch --no-analytics --master-key=masterKey
       - name: Run the scraper with basic config
         run: pipenv run ./docs_scraper $CONFIG_FILE
         env:
