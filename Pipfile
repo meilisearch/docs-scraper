@@ -13,5 +13,5 @@ python-keycloak-client = "==0.2.3"
 
 [dev-packages]
 pylint = "==2.8.2"
-tox = "==3.25.0"
+tox = "==3.25.1"
 tox-pipenv = "==1.10.1"
