@@ -77,7 +77,7 @@ def run_config(config):
           client_secret=os.getenv("KC_CLIENT_SECRET"))
         token_response = oidc_client.client_credentials()
         token = token_response["access_token"]
-        headers.update({"Authorization": 'bearer ' + token})
+        headers.update({"Authorization": 'Bearer ' + token})
 
     DEFAULT_REQUEST_HEADERS = headers
 
