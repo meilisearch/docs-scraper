@@ -46,6 +46,7 @@ This scraper is used in production and runs on the [Meilisearch documentation](h
     - [`sitemap_alternate_links` (optional)](#sitemap_alternate_links-optional)
     - [`selectors_exclude` (optional)](#selectors_exclude-optional)
     - [`custom_settings` (optional)](#custom_settings-optional)
+    - [`filterableAttributes` (optional)](#filterableAttributes-optional)
     - [`min_indexed_level` (optional)](#min_indexed_level-optional)
     - [`only_content_level` (optional)](#only_content_level-optional)
     - [`js_render` (optional)](#js_render-optional)
@@ -435,8 +436,19 @@ Here is the [dedicated page about synonyms](https://docs.meilisearch.com/referen
 ##### Stop Words <!-- omit in TOC -->
 
 Because your website might provide content with structured English sentences, we recommend adding stop words. Indeed, the search-engine would not be "spoiled" by linking words and would focus on the main words of the query, rendering more accurate results.<br>
-Here is the [dedicated page about stop-words](https://docs.meilisearch.com/reference/features/stop_words.html) in the official documentation.<br>
+Here is the dedicated page about [stop-words](https://docs.meilisearch.com/learn/configuration/settings.html#stop-words) in the official documentation.<br>
 You can find more complete lists of English stop-words [like this one](https://gist.github.com/sebleier/554280).
+
+#### `filterableAttributes` (optional)
+
+List of attributes that can be used for filtering and faceted search. By default, filterableAttributes is empty due to which filters do not work without first explicitly adding an array of attributes whose corresponding values are either numbers or strings.
+
+```json
+"custom_settings": {
+    "filterableAttributes": ["genres", "type"],
+    "stopWords": ["of", "the"]
+  },
+```
 
 
 #### `min_indexed_level` (optional)
