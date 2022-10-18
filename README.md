@@ -426,7 +426,7 @@ This field can be used to add Meilisearch settings.
     },
     "stopWords": ["of", "the"],
     "filterableAttributes": ["genres", "type"],
-  },
+  }
 ```
 
 Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://docs.meilisearch.com/reference/api/settings.html#settings-object).
