@@ -413,6 +413,7 @@ This can be used to remove a table of content, a sidebar, or a footer, to make o
 
 This field can be used to add Meilisearch settings.
 
+##### Example:
 ```json
 "custom_settings": {
     "synonyms": {
@@ -423,20 +424,12 @@ This field can be used to add Meilisearch settings.
         "static site generator"
       ]
     },
-    "stopWords": ["of", "the"]
-  },
+    "stopWords": ["of", "the"],
+    "filterableAttributes": ["genres", "type"]
+  }
 ```
 
-##### Synonyms <!-- omit in TOC -->
-
-The synonyms `SGG <=> Static Site Generator` allows the user to find all the results containing "Static Site Generator" with only typing "SSG" (and the opposite).
-Here is the [dedicated page about synonyms](https://docs.meilisearch.com/reference/features/synonyms.html) in the official documentation.
-
-##### Stop Words <!-- omit in TOC -->
-
-Because your website might provide content with structured English sentences, we recommend adding stop words. Indeed, the search-engine would not be "spoiled" by linking words and would focus on the main words of the query, rendering more accurate results.<br>
-Here is the [dedicated page about stop-words](https://docs.meilisearch.com/reference/features/stop_words.html) in the official documentation.<br>
-You can find more complete lists of English stop-words [like this one](https://gist.github.com/sebleier/554280).
+Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://docs.meilisearch.com/reference/api/settings.html#settings-object).
 
 
 #### `min_indexed_level` (optional)
