@@ -414,6 +414,7 @@ This can be used to remove a table of content, a sidebar, or a footer, to make o
 
 This field can be used to add Meilisearch settings.
 
+##### Example:
 ```json
 "custom_settings": {
     "synonyms": {
@@ -429,7 +430,7 @@ This field can be used to add Meilisearch settings.
   },
 ```
 
-Learn more about `filterableAttributes`, `synonyms` and `stop-words` and all the other settings in the [Meilisearch documentation](https://docs.meilisearch.com/reference/api/settings.html#settings-object).
+Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://docs.meilisearch.com/reference/api/settings.html#settings-object).
 
 
 #### `min_indexed_level` (optional)
