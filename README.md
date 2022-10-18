@@ -46,7 +46,6 @@ This scraper is used in production and runs on the [Meilisearch documentation](h
     - [`sitemap_alternate_links` (optional)](#sitemap_alternate_links-optional)
     - [`selectors_exclude` (optional)](#selectors_exclude-optional)
     - [`custom_settings` (optional)](#custom_settings-optional)
-    - [`filterableAttributes` (optional)](#filterableAttributes-optional)
     - [`min_indexed_level` (optional)](#min_indexed_level-optional)
     - [`only_content_level` (optional)](#only_content_level-optional)
     - [`js_render` (optional)](#js_render-optional)
