@@ -157,8 +157,8 @@ pipenv run ./docs_scraper <path-to-your-config-file>
 docker run -t --rm \
     -e MEILISEARCH_HOST_URL=<your-meilisearch-host-url> \
     -e MEILISEARCH_API_KEY=<your-meilisearch-api-key> \
-    -v <absolute-path-to-your-config-file>:/docs-scraper/config.json \
-    getmeili/docs-scraper:latest pipenv run ./docs_scraper config.json
+    -v <absolute-path-to-your-config-file>:/docs-scraper/<path-to-your-config-file> \
+    getmeili/docs-scraper:latest pipenv run ./docs_scraper <path-to-your-config-file>
 ```
 
 `<absolute-path-to-your-config-file>` should be the absolute path of your configuration file defined at the [previous step](#set-your-config-file).
@@ -184,8 +184,8 @@ run-scraper:
         docker run -t --rm \
           -e MEILISEARCH_HOST_URL=$HOST_URL \
           -e MEILISEARCH_API_KEY=$API_KEY \
-          -v $CONFIG_FILE_PATH:/docs-scraper/config.json \
-          getmeili/docs-scraper:latest pipenv run ./docs_scraper config.json
+          -v $CONFIG_FILE_PATH:/docs-scraper/<path-to-your-config-file> \
+          getmeili/docs-scraper:latest pipenv run ./docs_scraper <path-to-your-config-file>
 ```
 
 ⚠️ We do not recommend using the `latest` image in production. Use the [release tags](https://github.com/meilisearch/docs-scraper/releases) instead.
