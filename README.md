@@ -87,7 +87,7 @@ _Meilisearch is open-source and can run either on your server or on any cloud pr
 
 ### Set your Config File
 
-The scraper tool needs a config file to know which content you want to scrape. This is done by providing **selectors** (e.g. the HTML tag/id/class).
+The scraper tool needs a config file to know which content you want to scrape. This is done by providing **selectors** (e.g. the HTML tag/id/class). The config file will be passed as an argument, so you can use any name you like.
 
 Here is an example of a basic config file:
 
