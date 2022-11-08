@@ -18,7 +18,7 @@ jobs:
       - name: Install pipenv
         run: pipx install pipenv
       - name: Set up Python 3.8
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
           cache: "pipenv"
@@ -39,7 +39,7 @@ jobs:
       - name: Install pipenv
         run: pipx install pipenv
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pipenv"
@@ -60,7 +60,7 @@ jobs:
       - name: Install pipenv
         run: pipx install pipenv
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pipenv"
