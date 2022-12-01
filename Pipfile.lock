@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1aba3bc5f372e08b6df65ece59f207fa795cbf14c30e9466afd089ebe284cfdb"
+            "sha256": "27b8edd8bc7045ff293f0df3a84e5680f3a0addc7c4c5ca8ec96b7b96f120186"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -328,11 +328,11 @@
         },
         "meilisearch": {
             "hashes": [
-                "sha256:81b703c0525ac670153585f6f2f93fce0f99f533e530c26a11ed204fae801670",
-                "sha256:868d43d5af12e57c45c59e138e63c0e3a3a1bfbce38c0ee71f1d817f2d2fc2f1"
+                "sha256:2b649540b533eeb02b47f1d354c868004652886f6279ecf4d270b64290fa46c2",
+                "sha256:7fd7238bf5ad079a398092725e2d38f22ac3517916fe262014507bfd9b181d6a"
             ],
             "index": "pypi",
-            "version": "==0.22.1"
+            "version": "==0.23.0"
         },
         "outcome": {
             "hashes": [
@@ -637,6 +637,9 @@
             "version": "==4.4.0"
         },
         "urllib3": {
+            "extras": [
+                "socks"
+            ],
             "hashes": [
                 "sha256:47cc05d99aaa09c9e72ed5809b60e7ba354e64b59c9c173ac3018642d8bb41fc",
                 "sha256:c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
