@@ -123,8 +123,7 @@ class MeiliSearchHelper:
         color = "96" if from_sitemap else "94"
 
         print(
-            '\033[{}m> Docs-Scraper: \033[0m{}\033[93m {} records\033[0m)'.format(
-                color, url, record_count))
+            f'\033[{color}m> Docs-Scraper: \033[0m{url}\033[93m {record_count} records\033[0m)')
 
 # Algolia's settings:
     # {"minWordSizefor1Typo"=>3,
