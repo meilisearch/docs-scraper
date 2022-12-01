@@ -24,14 +24,13 @@ class BrowserHandler:
             chrome_options = Options()
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--headless')
-            chrome_options.add_argument('user-agent={0}'.format(user_agent))
+            chrome_options.add_argument(f'user-agent={user_agent}')
 
             CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH',
                                                "/usr/bin/chromedriver")
             if not os.path.isfile(CHROMEDRIVER_PATH):
                 raise Exception(
-                    "Env CHROMEDRIVER_PATH='{}' is not a path to a file".format(
-                        CHROMEDRIVER_PATH))
+                    f"Env CHROMEDRIVER_PATH='{CHROMEDRIVER_PATH}' is not a path to a file")
             driver = webdriver.Chrome(
                 CHROMEDRIVER_PATH,
                 options=chrome_options)

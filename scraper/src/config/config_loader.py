@@ -42,7 +42,7 @@ class ConfigLoader:
     stop_content = []
     strategy = 'default'
     strict_redirect = True
-    strip_chars = u".,;:§¶"
+    strip_chars = ".,;:§¶"
     use_anchors = False
     user_agent = 'Meilisearch docs-scraper'
     only_content_level = False
@@ -90,7 +90,7 @@ class ConfigLoader:
     def _load_config(self, config):
         if os.path.isfile(config):
             self.config_file = config
-            with open(self.config_file, 'r') as f:
+            with open(self.config_file, mode='r', encoding='utf-8') as f:
                 config = f.read()
 
         try:
