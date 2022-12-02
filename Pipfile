@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 Scrapy = "==2.7.1"
-selenium = "==4.6.1"
+selenium = "==4.7.0"
 meilisearch = "==0.23.0"
 requests-iap = "==0.2.0"
 python-keycloak-client = "==0.2.3"
