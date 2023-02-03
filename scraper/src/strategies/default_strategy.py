@@ -127,6 +127,12 @@ class DefaultStrategy(AbstractStrategy):
                                                              selectors,
                                                              self.levels)
 
+            # remove trailing ' #' in headers
+            for k, v in hierarchy.items():
+                if v:
+                    if v.endswith(' #'):
+                        hierarchy[k] = v[:-2]
+
             # noinspection PyDictCreation
             record = {
                 'anchor': self._get_closest_anchor(anchors),
