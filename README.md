@@ -1,3 +1,34 @@
+# Ansys Fork of meilisearch/docs-scraper
+
+This repo is forked from [meilisearch/docs-scraper](https://github.com/meilisearch/docs-scraper) and includes a few modifications to make life easier when using this from Python and and scraping Sphinx documentation.
+
+Added:
+
+- Ability to install via `pip`
+- Ignore `" #"` at the end of headers for sphinx documentation.
+- Added a `__main__.py` to allow you to call this as a Python module.
+
+```
+$ python -m scraper -h
+usage: __main__.py [-h] [--meilisearch-host-url MEILISEARCH_HOST_URL]
+                   [--meilisearch-api-key MEILISEARCH_API_KEY]
+                   config_file
+
+Scrape documentation.
+
+positional arguments:
+  config_file           The path to the configuration file.
+
+options:
+  -h, --help            show this help message and exit
+  --meilisearch-host-url MEILISEARCH_HOST_URL
+                        The URL to the meilisearch host
+  --meilisearch-api-key MEILISEARCH_API_KEY
+                        The URL to the meilisearch host
+```
+
+Original documentation follows:
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/meilisearch/integration-guides/main/assets/logos/logo.svg" alt="Meilisearch" width="200" height="200" />
 </p>
