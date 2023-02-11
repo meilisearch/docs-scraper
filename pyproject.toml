@@ -1,0 +1,48 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "scraper"
+version = "0.1.dev0"
+author = "Alex Kaszynski"
+requires-python = ">=3.7"
+author-email = "alexander.kaszynski@ansys.com"
+home-page = "https://github.com/ansys/docs-scraper"
+description = "Documentation scraper."
+
+dependencies = [
+    "Scrapy",
+    "selenium",
+    "requests-iap",
+    "meilisearch",
+    "requests",
+    "python-keycloak-client",
+    "requests",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+
+[project.entry-points."scraper"]
+scraper = "scraper.__main__:main"
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.2.0",
+    "pylint==2.15.9",
+    "tox==3.27.1",
+    "tox-pipenv==1.10.1",
+]
