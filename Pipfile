@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 Scrapy = "==2.8.0"
-selenium = "==4.8.0"
+selenium = "==4.8.2"
 meilisearch = "==0.25.0"
 requests-iap = "==0.2.0"
 python-keycloak-client = "==0.2.3"
@@ -14,7 +14,7 @@ requests = "==2.28.2"
 [dev-packages]
 pytest = "==7.2.1"
 pylint = "==2.15.9"
-tox = "==4.4.4"
+tox = "==4.4.6"
 tox-pipenv = "==1.10.1"
 importlib_metadata = {version = "*", markers="python_version < '3.8'"}
 zipp = {version = "*", markers="python_version < '3.8'"}
