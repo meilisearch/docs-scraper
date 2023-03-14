@@ -39,9 +39,8 @@ class AbstractStrategy:
         try:
             body = response.body.decode(response.encoding)
             result = lxml.html.fromstring(body)
-        except (UnicodeError, ValueError):
+        except (UnicodeError, ValueError, lxml.etree.ParserError):
             result = lxml.html.fromstring(response.body)
-
         return result
 
     def get_strip_chars(self, level, selectors):
