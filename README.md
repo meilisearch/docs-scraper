@@ -6,11 +6,11 @@
 
 <h4 align="center">
   <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
-  <a href="https://docs.meilisearch.com">Documentation</a> |
+  <a href="https://www.meilisearch.com/docs">Documentation</a> |
   <a href="https://discord.meilisearch.com">Discord</a> |
   <a href="https://roadmap.meilisearch.com/tabs/1-under-consideration">Roadmap</a> |
   <a href="https://www.meilisearch.com">Website</a> |
-  <a href="https://docs.meilisearch.com/faq">FAQ</a>
+  <a href="https://www.meilisearch.com/docs/faq">FAQ</a>
 </h4>
 
 <p align="center">
@@ -23,7 +23,7 @@
 
 **Meilisearch** is an open-source search engine. [Discover what Meilisearch is!](https://github.com/meilisearch/meilisearch)
 
-This scraper is used in production and runs on the [Meilisearch documentation](https://docs.meilisearch.com/) on each deployment.
+This scraper is used in production and runs on the [Meilisearch documentation](https://www.meilisearch.com/docs) on each deployment.
 
 💡 If you already have your own scraper but you still want to use Meilisearch and our [front-end tools](#-and-for-the-front-end-search-bar), check out [this discussion](https://github.com/meilisearch/docs-searchbar.js/issues/40).
 
@@ -77,12 +77,12 @@ curl -L https://install.meilisearch.com | sh
 ./meilisearch --master-key=myMasterKey
 ```
 
-There are [other ways to install Meilisearch](https://docs.meilisearch.com/learn/tutorials/getting_started.html#download-and-launch).
+There are [other ways to install Meilisearch](https://www.meilisearch.com/docs/learn/getting_started/installation).
 
 The host URL and the API key you will provide in the next steps correspond to the credentials of this Meilisearch instance.
 In the example above, the host URL is `http://localhost:7700` and the API key is `myMasterKey`.
 
-_Meilisearch is open-source and can run either on your server or on any cloud provider. Here is a tutorial to [run Meilisearch in production](https://docs.meilisearch.com/running-production/)._
+_Meilisearch is open-source and can run either on your server or on any cloud provider. Here is a tutorial to [run Meilisearch in production](https://www.meilisearch.com/docs/learn/cookbooks/running-production/)._
 
 
 ### Set your Config File
@@ -197,7 +197,7 @@ Here is the [GitHub Action file](https://github.com/meilisearch/documentation/bl
 The API key you must provide should have the permissions to add documents into your Meilisearch instance.<br>
 In a production environment, we recommend providing the private key instead of the master key, as it is safer and it has enough permissions to perform such requests.
 
-_More about [Meilisearch authentication](https://docs.meilisearch.com/reference/features/authentication.html)._
+_More about [Meilisearch authentication](https://www.meilisearch.com/docs/learn/security/master_api_keys). _
 
 ## 🖌 And for the front-end search bar?
 
@@ -429,7 +429,7 @@ This field can be used to add Meilisearch settings.
   }
 ```
 
-Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://docs.meilisearch.com/reference/api/settings.html#settings-object).
+Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://meilisearch.com/docs/reference/api/settings#settings-object).
 
 
 #### `min_indexed_level` (optional)
