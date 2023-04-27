@@ -9,7 +9,7 @@ selenium = "==4.8.2"
 meilisearch = "==0.25.0"
 requests-iap = "==0.2.0"
 python-keycloak-client = "==0.2.3"
-requests = "==2.28.2"
+requests = "==2.29.0"
 
 [dev-packages]
 pytest = "==7.2.2"
