@@ -2,6 +2,8 @@
 Default Strategy
 """
 
+import os
+
 from lxml.etree import XPath
 from .abstract_strategy import AbstractStrategy
 from .anchor import Anchor
@@ -205,6 +207,17 @@ class DefaultStrategy(AbstractStrategy):
                  'position': position}, sort_keys=True).encode('utf-8'))
             digest_hash = raw_hash.hexdigest()
             record['objectID'] = digest_hash
+
+            # Replace the localhost and the port with the desired CNAME
+            # Example:
+            # http://localhost:1314/index.html#pyansys-actions
+            cname = os.getenv("DOCUMENTATION_CNAME")
+            if cname is not None:
+                http, _, port_and_page = record["url"].split(":")
+                port = os.getenv("DOCUMENTATION_PORT")
+                path = port_and_page[len(port):]
+                record['url'] = f"{http}://{cname}{path}"
+
             records.append(record)
 
         return records
