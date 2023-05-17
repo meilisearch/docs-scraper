@@ -50,7 +50,7 @@ def main(sys_args=None):
         os.environ['MEILISEARCH_API_KEY'] = args.meilisearch_api_key
     if args.cname is not None:
         os.environ['DOCUMENTATION_CNAME'] = args.cname
-    if args.cname is not None:
+    if args.port is not None:
         os.environ['DOCUMENTATION_PORT'] = args.port
 
     if 'MEILISEARCH_HOST_URL' not in os.environ:
