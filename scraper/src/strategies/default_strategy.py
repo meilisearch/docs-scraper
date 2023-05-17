@@ -216,7 +216,7 @@ class DefaultStrategy(AbstractStrategy):
                 http, _, port_and_page = record["url"].split(":")
                 port = os.getenv("DOCUMENTATION_PORT")
                 path = port_and_page[len(port):]
-                record['url'] = f"{http}://{cname}{path}"
+                record['url'] = f"{http}s://{cname}{path}"
 
             records.append(record)
 
