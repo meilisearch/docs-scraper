@@ -10,6 +10,7 @@ import json
 import os
 import copy
 
+from .version import qualified_version
 from .config_validator import ConfigValidator
 from .urls_parser import UrlsParser
 from .selectors_parser import SelectorsParser
@@ -44,7 +45,7 @@ class ConfigLoader:
     strict_redirect = True
     strip_chars = ".,;:§¶"
     use_anchors = False
-    user_agent = 'Meilisearch docs-scraper'
+    user_agent = qualified_version()
     only_content_level = False
     query_rules = []
 
