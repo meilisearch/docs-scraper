@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "92c8b9d8228cecc5589ecd008fca51453ec656db8cb5bea4434e0d890c7fc613"
+            "sha256": "2ce6eac3c6d0b4c7f8aaa01556c35aa0cf284e5e9cf127bffb2d9c9e66d468fb"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -45,7 +45,7 @@
                 "sha256:4b01725c8ccf918752436a8aab595fa153c5123c147225434bf1f40041acb3c7",
                 "sha256:7f200e1d1067245f39ae2df6c547dc3de8619060012679702f6471187280e6eb"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==3.0.0"
         },
         "certifi": {
@@ -594,7 +594,7 @@
                 "sha256:90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7",
                 "sha256:e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4.0'",
+            "markers": "python_version >= '3.6' and python_version < '4'",
             "version": "==4.9"
         },
         "scrapy": {
@@ -607,11 +607,11 @@
         },
         "selenium": {
             "hashes": [
-                "sha256:bd04eb41395605d9b2b65fe587f3fed21431da75512985c52772529e5e210c60",
-                "sha256:c48372905bffcc3b24bd55ab4683a07ee5e1f30fe918c59558ea5ee44cedf6c3"
+                "sha256:3444f4376321530c36ce8355b6b357d8cf4a7d588ce5cf772183465930bbed0e",
+                "sha256:82aedaa85d55bc861f4c89ff9609e82f6c958e2e1e3da3ffcc36703f21d3ee16"
             ],
             "index": "pypi",
-            "version": "==4.8.2"
+            "version": "==4.9.1"
         },
         "service-identity": {
             "hashes": [
@@ -692,9 +692,6 @@
             "version": "==4.6.2"
         },
         "urllib3": {
-            "extras": [
-
-            ],
             "hashes": [
                 "sha256:8d36afa7616d8ab714608411b4a3b13e58f463aee519024578e062e141dce20f",
                 "sha256:8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
