@@ -1,19 +1,22 @@
 {
   "index_uid": "docs",
-  "sitemap_urls": ["https://docs.meilisearch.com/sitemap.xml"],
-  "start_urls": ["https://docs.meilisearch.com"],
+  "sitemap_urls": ["https://www.meilisearch.com/sitemap.xml"],
+  "start_urls": ["https://www.meilisearch.com/docs"],
   "selectors": {
     "lvl0": {
-      "selector": ".sidebar-heading.open",
+      "selector": "#sidebar-list .sidebar-link[data-active=true]",
       "global": true,
       "default_value": "Documentation"
     },
-    "lvl1": ".theme-default-content h1",
-    "lvl2": ".theme-default-content h2",
-    "lvl3": ".theme-default-content h3",
-    "lvl4": ".theme-default-content h4",
-    "lvl5": ".theme-default-content h5",
-    "text": ".theme-default-content p, .theme-default-content li"
+    "lvl1": {
+      "selector": ".docs-main h1",
+      "global": true
+    },
+    "lvl2": ".docs-main h2",
+    "lvl3": ".docs-main h3",
+    "lvl4": ".docs-main h4",
+    "lvl5": ".docs-main h5",
+    "text": ".docs-main p, .docs-main li, .docs-main td"
   },
   "strip_chars": " .,;:#",
   "scrap_start_urls": true,
