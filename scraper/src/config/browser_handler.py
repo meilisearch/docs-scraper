@@ -1,3 +1,4 @@
+import builtins
 import re
 import os
 from selenium import webdriver
@@ -29,7 +30,7 @@ class BrowserHandler:
             CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH',
                                                "/usr/bin/chromedriver")
             if not os.path.isfile(CHROMEDRIVER_PATH):
-                raise Exception(
+                raise builtins.Exception(
                     f"Env CHROMEDRIVER_PATH='{CHROMEDRIVER_PATH}' is not a path to a file")
             driver = webdriver.Chrome(
                 CHROMEDRIVER_PATH,

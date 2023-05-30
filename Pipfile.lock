@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f44011e0793af5a8bbad948624a6df6f00f8b1a3d09ae662947f42f5f8a7de96"
+            "sha256": "75afb584a81d07f4d15f499238efdc40c6380c94d96e5abe5a7cf053bb0595f6"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -45,7 +45,7 @@
                 "sha256:4b01725c8ccf918752436a8aab595fa153c5123c147225434bf1f40041acb3c7",
                 "sha256:7f200e1d1067245f39ae2df6c547dc3de8619060012679702f6471187280e6eb"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4'",
+            "markers": "python_version >= '3.7' and python_version < '4.0'",
             "version": "==3.0.0"
         },
         "certifi": {
@@ -594,7 +594,7 @@
                 "sha256:90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7",
                 "sha256:e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4'",
+            "markers": "python_version >= '3.6' and python_version < '4.0'",
             "version": "==4.9"
         },
         "scrapy": {
@@ -758,11 +758,11 @@
     "develop": {
         "astroid": {
             "hashes": [
-                "sha256:6891f444625b6edb2ac798829b689e95297e100ddf89dbed5a8c610e34901501",
-                "sha256:df164d5ac811b9f44105a72b8f9d5edfb7b5b2d7e979b04ea377a77b3229114a"
+                "sha256:078e5212f9885fa85fbb0cf0101978a336190aadea6e13305409d099f71b2324",
+                "sha256:1039262575027b441137ab4a62a793a9b43defb42c32d5670f38686207cd780f"
             ],
             "markers": "python_full_version >= '3.7.2'",
-            "version": "==2.13.5"
+            "version": "==2.15.5"
         },
         "cachetools": {
             "hashes": [
@@ -935,11 +935,11 @@
         },
         "pylint": {
             "hashes": [
-                "sha256:18783cca3cfee5b83c6c5d10b3cdb66c6594520ffae61890858fe8d932e1c6b4",
-                "sha256:349c8cd36aede4d50a0754a8c0218b43323d13d5d88f4b2952ddfe3e169681eb"
+                "sha256:5dcf1d9e19f41f38e4e85d10f511e5b9c35e1aa74251bf95cdd8cb23584e2db1",
+                "sha256:7a1145fb08c251bdb5cca11739722ce64a63db479283d10ce718b2460e54123c"
             ],
             "index": "pypi",
-            "version": "==2.15.9"
+            "version": "==2.17.4"
         },
         "pyproject-api": {
             "hashes": [
