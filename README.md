@@ -125,8 +125,7 @@ The `docs-content` class (the `.` means this is a class) is the main container o
 
 Every searchable `lvl` elements outside this main documentation container (for instance, in a sidebar) must be `global` selectors. They will be globally picked up and injected to every document built from your page.
 
-If your website is a VuePress application, you can check out the [config file](https://github.com/meilisearch/documentation/blob/master/.vuepress/docs-scraper/docs-scraper.config.json) we use in production.<br>
-In our case, the main container is `theme-default-content` and the selector the titles and sub-titles are `h1`, `h2`...
+You can also check out the [config file](https://github.com/meilisearch/documentation/blob/main/docs-scraper.config.json) we use in production for our own documentation site.<br>
 
 💡 _To better understand the selectors, go to [this section](#more-about-the-selectors)._
 
