@@ -133,6 +133,12 @@ _[Read more about this](https://github.com/meilisearch/integration-guides/blob/m
 
 ⚠️ Before doing anything, make sure you got through the guide about [Releasing an Integration](https://github.com/meilisearch/integration-guides/blob/main/resources/integration-release.md).
 
+Make a PR modifying the file [`scraper/src/config/version.py`](/scraper/src/config/version.py) with the right version.
+
+```python
+__version__ = "X.X.X"
+```
+
 Once the changes are merged on `main`, you can publish the current draft release via the [GitHub interface](https://github.com/meilisearch/docs-scraper/releases): on this page, click on `Edit` (related to the draft release) > update the description (be sure you apply [these recommendations](https://github.com/meilisearch/integration-guides/blob/main/resources/integration-release.md#writting-the-release-description)) > when you are ready, click on `Publish release`.
 
 GitHub Actions will be triggered and push the `latest` and `vX.X.X` version of the Docker image to [DockerHub](https://hub.docker.com/repository/docker/getmeili/docs-scraper).
