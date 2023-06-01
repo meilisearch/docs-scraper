@@ -1,4 +1,6 @@
 # coding: utf-8
+import re
+from scraper.src.config.version import __version__, qualified_version
 from scraper.src.config.config_loader import ConfigLoader
 from .abstract import config
 import pytest
@@ -48,3 +50,13 @@ class TestInit:
 
         with pytest.raises(Exception):
             ConfigLoader(c)
+
+    def test_get_qualified_version(self):
+        """ Old variable scrap_url must be spread to scrape_url. If one is defined, the previous one must be used"""
+        c = config({
+            'user_agent': qualified_version()
+        })
+
+        config_loaded = ConfigLoader(c)
+
+        assert config_loaded.user_agent == f"Meilisearch DocsScraper (v{__version__})"

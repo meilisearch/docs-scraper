@@ -4,6 +4,8 @@ Wrapper on top of the Meilisearch API client"""
 import meilisearch
 from builtins import range
 
+from .config.version import qualified_version
+
 def remove_bad_encoding(value):
     return value.replace('&#x27;', "'")
 
@@ -99,7 +101,7 @@ class MeiliSearchHelper:
     }
 
     def __init__(self, host_url, api_key, index_uid, custom_settings):
-        self.meilisearch_client = meilisearch.Client(host_url, api_key)
+        self.meilisearch_client = meilisearch.Client(host_url, api_key, client_agents=(qualified_version(),))
         self.meilisearch_index = self.meilisearch_client.index(index_uid)
         self.delete_index()
         self.add_settings(MeiliSearchHelper.SETTINGS, custom_settings)
