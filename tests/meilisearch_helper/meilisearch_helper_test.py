@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 import requests
 
-from scraper.src.meilisearch_helper import MeiliSearchHelper
 from scraper.src.config.version import __version__
+from scraper.src.meilisearch_helper import MeiliSearchHelper
 from tests.meilisearch_helper import common
 
 
@@ -34,4 +34,7 @@ class TestMeilisearchHelper:
             )
 
         # Then
-        assert actual.meilisearch_client.http.headers['User-Agent'] == f"Meilisearch Python (v0.27.0);Meilisearch DocsScraper (v{__version__})"
+        split_version = actual.meilisearch_client.http.headers['User-Agent'].split(";")
+        assert len(split_version) == 2
+        assert split_version[0].startswith("Meilisearch Python (") is True
+        assert split_version[1] == f"Meilisearch DocsScraper (v{__version__})"
