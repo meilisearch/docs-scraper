@@ -5,9 +5,15 @@ ENV LANG C.UTF-8
 
 WORKDIR /docs-scraper
 
-RUN apt-get update -y && apt-get install -y python3-pip libnss3 chromium-driver
+RUN : \
+  && apt-get update -y \
+  && apt-get install -y --no-install-recommends \
+  libnss3 \
+  chromium-driver \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install pipenv
+RUN pip install -U pip && pip install pipenv --no-cache-dir
 
 COPY Pipfile Pipfile
 COPY Pipfile.lock Pipfile.lock
