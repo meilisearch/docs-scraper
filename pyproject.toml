@@ -3,22 +3,16 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "scraper"
+name = "pymeilisearch-scraper"
 version = "0.1.dev0"
-author = "Alex Kaszynski"
+description = "Documentation scrapper for PyMeilisearch"
+readme = "README.md"
 requires-python = ">=3.7"
-author-email = "alexander.kaszynski@ansys.com"
-home-page = "https://github.com/ansys/docs-scraper"
-description = "Documentation scraper."
-
-dependencies = [
-    "Scrapy",
-    "selenium",
-    "requests-iap",
-    "meilisearch",
-    "requests",
-    "python-keycloak-client",
-    "requests",
+authors = [
+    {name = "ANSYS, Inc.", email="pyansys.core@ansys.com"},
+]
+maintainers = [
+    {name = "PyAnsys Core Team", email="pyansys.core@ansys.com"},
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -33,7 +27,20 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
 ]
+dependencies = [
+    "Scrapy",
+    "selenium",
+    "requests-iap",
+    "meilisearch",
+    "requests",
+    "python-keycloak-client",
+    "requests",
+]
 
+[project.urls]
+Homepage = "https://github.com/ansys/pymeilisearch-scraper"
+Source = "https://github.com/ansys/pymeilisearch-scraper"
+Tracker = "https://github.com/ansys/pymeilisearch-scraper/issues"
 
 [project.entry-points."scraper"]
 scraper = "scraper.__main__:main"

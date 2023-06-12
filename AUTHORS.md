@@ -1,6 +1,3 @@
 # Authors
 
-## Project Lead
-
-*   [Alex Kaszynski](https://github.com/akaszynski)
-
+* [ANSYS, Inc.](https://ansys.com)
