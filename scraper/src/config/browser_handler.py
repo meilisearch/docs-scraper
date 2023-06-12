@@ -28,13 +28,7 @@ class BrowserHandler:
             chrome_options.add_argument('--headless')
             chrome_options.add_argument(f'user-agent={user_agent}')
 
-            CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH',
-                                               "/usr/bin/chromedriver")
-            if not os.path.isfile(CHROMEDRIVER_PATH):
-                raise builtins.Exception(
-                    f"Env CHROMEDRIVER_PATH='{CHROMEDRIVER_PATH}' is not a path to a file")
-            driver = webdriver.Chrome(  # pylint: disable=redundant-keyword-arg
-                CHROMEDRIVER_PATH,
+            driver = webdriver.Chrome(
                 options=chrome_options)
             CustomDownloaderMiddleware.driver = driver
             JsExecutor.driver = driver
