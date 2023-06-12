@@ -1,4 +1,6 @@
-# Ansys Fork of meilisearch/docs-scraper
+# pymeilisearch-scraper
+
+**An Ansys fork of meilisearch/docs-scraper**
 
 This repository has been forked from
 [meilisearch/docs-scraper](https://github.com/meilisearch/docs-scraper) and
