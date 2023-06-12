@@ -37,6 +37,9 @@ dependencies = [
     "requests",
 ]
 
+[tool.flit.module]
+name = "scraper"
+
 [project.urls]
 Homepage = "https://github.com/ansys/pymeilisearch-scraper"
 Source = "https://github.com/ansys/pymeilisearch-scraper"
