@@ -11,8 +11,9 @@ scrapping online and local documentation pages.
 Added:
 
 - Ability to install via `pip`
-- Ignore `" #"` at the end of headers for sphinx documentation.
-- Added a `__main__.py` to allow you to call this as a Python module.
+- Ignore `" #"` at the end of headers for sphinx documentation
+- Added a `__main__.py` to allow you to call this as a Python module
+- Includes desired CNAME when scrapping local pages
 
 ```
 $ python -m scraper -h
