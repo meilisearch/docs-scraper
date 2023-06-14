@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Install Chromium
-        run: sudo apt-get update && sudo apt-get install -y chromium-browser
+        run: sudo apt-get update && sudo apt-get install -y chromium-browser chromium-chromedriver
 
       - name: Install pipenv
         run: pipx install pipenv

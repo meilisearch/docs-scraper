@@ -16,7 +16,6 @@ class TestGetExtraFacets:
         assert actual.get_extra_facets() == []
 
     @pytest.mark.chromedriver
-    # @pytest.mark.usefixtures("chromedriver")
     def test_extra_facets_should_be_set_from_start_urls_variables_browser(self,
                                                                           monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
@@ -40,7 +39,6 @@ class TestGetExtraFacets:
         assert actual.get_extra_facets() == ["type_of_content"]
 
     @pytest.mark.chromedriver
-    # @pytest.mark.usefixtures("chromedriver")
     def test_extra_facets_should_be_set_from_start_urls_variables_with_two_start_url_browser(
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
@@ -71,7 +69,6 @@ class TestGetExtraFacets:
         assert actual.get_extra_facets() == ["type_of_content"]
 
     @pytest.mark.chromedriver
-    # @pytest.mark.usefixtures("chromedriver")
     def test_extra_facets_should_be_set_from_start_urls_variables_with_multiple_tags_browser(
             self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
