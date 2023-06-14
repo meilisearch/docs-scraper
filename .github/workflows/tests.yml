@@ -41,6 +41,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install Chromium
+        run: sudo apt-get update && sudo apt-get install -y chromium-browser chromium-chromedriver
+
       - name: Install pipenv
         run: pipx install pipenv
 
@@ -54,7 +57,7 @@ jobs:
         run: pipenv install --dev
 
       - name: Run tests
-        run: pipenv run pytest -m "not chromedriver"
+        run: pipenv run pytest
 
   integration_tests:
     env:
