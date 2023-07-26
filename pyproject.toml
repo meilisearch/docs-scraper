@@ -28,6 +28,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 ]
 dependencies = [
+    "importlib-metadata >=4.0",
     "Scrapy",
     "selenium",
     "requests-iap",

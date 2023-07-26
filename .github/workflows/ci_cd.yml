@@ -1,0 +1,77 @@
+name: GitHub CI
+on:
+  pull_request:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+env:
+  MAIN_PYTHON_VERSION: '3.10'
+  LIBRARY_NAME: 'pymeilisearch-scraper'
+  LIBRARY_NAMESPACE: 'scraper'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  smoke-tests:
+    name: Build and smoke tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+        should-release: 
+          - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
+        exclude:
+          - should-release: false
+            os: macos-latest
+    steps:
+      - name: "Build wheelhouse and perform smoke test"
+        uses: ansys/actions/build-wheelhouse@v4
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          library-namespace: ${{ env.LIBRARY_NAMESPACE }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+
+  build-library:
+    name: "Build library"
+    runs-on: ubuntu-latest
+    needs: [smoke-tests]
+    steps:
+      - uses: ansys/actions/build-library@v4
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+  release:
+    name: "Release project to private PyPI, public PyPI and GitHub"
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
+    needs: build-library
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: "Release to the private PyPI repository"
+        uses: ansys/actions/release-pypi-private@v4
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          twine-username: "__token__"
+          twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
+
+      - name: "Release to the public PyPI repository"
+        uses: ansys/actions/release-pypi-public@v4
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          twine-username: "__token__"
+          twine-token: ${{ secrets.PYPI_TOKEN }}
+
+      - name: "Release to GitHub"
+        uses: ansys/actions/release-github@v4
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
