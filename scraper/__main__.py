@@ -3,7 +3,6 @@
 Permits:
 
 """
-import sys
 import os
 from scraper.src.index import run_config
 import argparse

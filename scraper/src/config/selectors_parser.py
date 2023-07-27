@@ -1,3 +1,4 @@
+import builtins
 from ..helpers import css_to_xpath
 
 
@@ -27,7 +28,7 @@ class SelectorsParser:
             # Type
             if 'type' in selectors_set[key]:
                 if selectors_set[key]['type'] not in ['xpath', 'css']:
-                    raise Exception(
+                    raise builtins.Exception(
                         selectors_set[key][
                             'type'] + 'is not a good selector type, it should be `xpath` or `css`')
             else:

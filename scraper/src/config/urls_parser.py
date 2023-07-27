@@ -1,3 +1,4 @@
+import builtins
 import re
 import copy
 
@@ -55,11 +56,11 @@ class UrlsParser:
                                         start_url['variables'][match]['url'],
                                         start_url['variables'][match]['js'])
                                 else:
-                                    raise Exception(
+                                    raise builtins.Exception(
                                         "Bad arguments for variables." + match + " for url " +
                                         start_url['url'])
                         else:
-                            raise Exception(
+                            raise builtins.Exception(
                                 "Missing " + match + " in variables" + " for url " +
                                 start_url['url'])
 

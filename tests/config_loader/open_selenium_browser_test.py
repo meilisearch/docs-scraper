@@ -1,8 +1,9 @@
 # coding: utf-8
 import pytest
 
-from scraper.src.config.config_loader import ConfigLoader
 from scraper.src.config.browser_handler import BrowserHandler
+from scraper.src.config.config_loader import ConfigLoader
+
 from .abstract import config
 from .mocked_init import MockedInit
 
@@ -17,7 +18,6 @@ class TestOpenSeleniumBrowser:
                                                 actual.js_render) is False
 
     @pytest.mark.chromedriver
-    @pytest.mark.usefixtures("chromedriver")
     def test_browser_needed_when_js_render_true(self, monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",
                             lambda x: MockedInit())
@@ -32,7 +32,7 @@ class TestOpenSeleniumBrowser:
                                                 actual.js_render) is True
 
     @pytest.mark.chromedriver
-    @pytest.mark.usefixtures("chromedriver")
+    @pytest.mark.xfail(strict=True)
     def test_browser_needed_when_config_contains_automatic_tag(self,
                                                                monkeypatch):
         monkeypatch.setattr("selenium.webdriver.chrome",

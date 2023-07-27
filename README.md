@@ -48,11 +48,12 @@ Original documentation follows:
 
 <h4 align="center">
   <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
-  <a href="https://docs.meilisearch.com">Documentation</a> |
+  <a href="https://www.meilisearch.com/pricing?utm_campaign=oss&utm_source=integration&utm_medium=docs-scraper">Meilisearch Cloud</a> |
+  <a href="https://www.meilisearch.com/docs">Documentation</a> |
   <a href="https://discord.meilisearch.com">Discord</a> |
   <a href="https://roadmap.meilisearch.com/tabs/1-under-consideration">Roadmap</a> |
   <a href="https://www.meilisearch.com">Website</a> |
-  <a href="https://docs.meilisearch.com/faq">FAQ</a>
+  <a href="https://www.meilisearch.com/docs/faq">FAQ</a>
 </h4>
 
 <p align="center">
@@ -65,12 +66,13 @@ Original documentation follows:
 
 **Meilisearch** is an open-source search engine. [Discover what Meilisearch is!](https://github.com/meilisearch/meilisearch)
 
-This scraper is used in production and runs on the [Meilisearch documentation](https://docs.meilisearch.com/) on each deployment.
+This scraper is used in production and runs on the [Meilisearch documentation](https://www.meilisearch.com/docs) on each deployment.
 
 💡 If you already have your own scraper but you still want to use Meilisearch and our [front-end tools](#-and-for-the-front-end-search-bar), check out [this discussion](https://github.com/meilisearch/docs-searchbar.js/issues/40).
 
 ## Table of Contents <!-- omit in TOC -->
 
+- [⚡ Supercharge your Meilisearch experience](#-supercharge-your-meilisearch-experience)
 - [⚙️ Usage](#️-usage)
   - [Run your Meilisearch Instance](#run-your-meilisearch-instance)
   - [Set your Config File](#set-your-config-file)
@@ -100,6 +102,10 @@ This scraper is used in production and runs on the [Meilisearch documentation](h
 - [Credits](#credits)
 
 
+## ⚡ Supercharge your Meilisearch experience
+
+Say goodbye to server deployment and manual updates with [Meilisearch Cloud](https://www.meilisearch.com/pricing?utm_campaign=oss&utm_source=integration&utm_medium=docs-scraper). No credit card required.
+
 ## ⚙️ Usage
 
 Here are the 3 steps to use `docs-scraper`:
@@ -119,12 +125,12 @@ curl -L https://install.meilisearch.com | sh
 ./meilisearch --master-key=myMasterKey
 ```
 
-There are [other ways to install Meilisearch](https://docs.meilisearch.com/learn/tutorials/getting_started.html#download-and-launch).
+There are [other ways to install Meilisearch](https://www.meilisearch.com/docs/learn/getting_started/installation).
 
 The host URL and the API key you will provide in the next steps correspond to the credentials of this Meilisearch instance.
 In the example above, the host URL is `http://localhost:7700` and the API key is `myMasterKey`.
 
-_Meilisearch is open-source and can run either on your server or on any cloud provider. Here is a tutorial to [run Meilisearch in production](https://docs.meilisearch.com/running-production/)._
+_Meilisearch is open-source and can run either on your server or on any cloud provider. Here is a tutorial to [run Meilisearch in production](https://www.meilisearch.com/docs/learn/cookbooks/running-production/)._
 
 
 ### Set your Config File
@@ -167,8 +173,7 @@ The `docs-content` class (the `.` means this is a class) is the main container o
 
 Every searchable `lvl` elements outside this main documentation container (for instance, in a sidebar) must be `global` selectors. They will be globally picked up and injected to every document built from your page.
 
-If your website is a VuePress application, you can check out the [config file](https://github.com/meilisearch/documentation/blob/master/.vuepress/docs-scraper/docs-scraper.config.json) we use in production.<br>
-In our case, the main container is `theme-default-content` and the selector the titles and sub-titles are `h1`, `h2`...
+You can also check out the [config file](https://github.com/meilisearch/documentation/blob/main/docs-scraper.config.json) we use in production for our own documentation site.<br>
 
 💡 _To better understand the selectors, go to [this section](#more-about-the-selectors)._
 
@@ -239,7 +244,7 @@ Here is the [GitHub Action file](https://github.com/meilisearch/documentation/bl
 The API key you must provide should have the permissions to add documents into your Meilisearch instance.<br>
 In a production environment, we recommend providing the private key instead of the master key, as it is safer and it has enough permissions to perform such requests.
 
-_More about [Meilisearch authentication](https://docs.meilisearch.com/reference/features/authentication.html)._
+_More about [Meilisearch authentication](https://www.meilisearch.com/docs/learn/security/master_api_keys). _
 
 ## 🖌 And for the front-end search bar?
 
@@ -471,7 +476,7 @@ This field can be used to add Meilisearch settings.
   }
 ```
 
-Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://docs.meilisearch.com/reference/api/settings.html#settings-object).
+Learn more about `filterableAttributes`, `synonyms`, `stop-words` and all available settings in the [Meilisearch documentation](https://meilisearch.com/docs/reference/api/settings#settings-object).
 
 
 #### `min_indexed_level` (optional)

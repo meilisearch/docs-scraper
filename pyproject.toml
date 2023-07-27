@@ -7,13 +7,11 @@ name = "pymeilisearch-scraper"
 version = "0.1.dev0"
 description = "Documentation scrapper for PyMeilisearch"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 authors = [
     {name = "ANSYS, Inc.", email="pyansys.core@ansys.com"},
 ]
-maintainers = [
-    {name = "PyAnsys Core Team", email="pyansys.core@ansys.com"},
-]
+maintainers = [{name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"}]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
@@ -22,20 +20,18 @@ classifiers = [
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX",
     "Operating System :: MacOS",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
-    "importlib-metadata >=4.0",
-    "Scrapy",
-    "selenium",
-    "requests-iap",
-    "meilisearch",
-    "requests",
-    "python-keycloak-client",
-    "requests",
+    "Scrapy==2.9.0",
+    "selenium==4.10.0",
+    "requests-iap==0.2.0",
+    "meilisearch==0.28.1",
+    "requests==2.31.0",
+    "python-keycloak-client==0.2.3",
 ]
 
 [tool.flit.module]
