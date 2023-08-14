@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9bfd4ff262aad8f84a75c1a676e0fa977e3db78af322067ab734008344e00136"
+            "sha256": "197f5af0daf7224cfce2d3bb3121ff69b824ab20ae13b716a254f5ff5158b7e7"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -460,11 +460,11 @@
         },
         "protego": {
             "hashes": [
-                "sha256:04419b18f20e8909f1691c6b678392988271cc2a324a72f9663cb3af838b4bf7",
-                "sha256:df666d4304dab774e2dc9feb208bb1ac8d71ea5ceec12f4c99eba30fbd642ff2"
+                "sha256:04228bffde4c6bcba31cf6529ba2cfd6e1b70808fdc1d2cb4301be6b28d6c568",
+                "sha256:db38f6a945839d8162a4034031a21490469566a2726afb51d668497c457fb0aa"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
-            "version": "==0.2.1"
+            "markers": "python_version >= '3.7'",
+            "version": "==0.3.0"
         },
         "pyasn1": {
             "hashes": [
@@ -1073,11 +1073,11 @@
         },
         "tox": {
             "hashes": [
-                "sha256:1b8f8ae08d6a5475cad9d508236c51ea060620126fd7c3c513d0f5c7f29cc776",
-                "sha256:5e2ad8845764706170d3dcaac171704513cc8a725655219acb62fe4380bdadda"
+                "sha256:2adacf435b12ccf10b9dfa9975d8ec0afd7cbae44d300463140d2117b968037b",
+                "sha256:4991305a56983d750a0d848a34242be290452aa88d248f1bf976e4036ee8b213"
             ],
             "index": "pypi",
-            "version": "==4.6.4"
+            "version": "==4.8.0"
         },
         "tox-pipenv": {
             "hashes": [
@@ -1089,11 +1089,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:43a3052be36080548bdee0b42919c88072037d50d56c28bd3f853cbe92b953ff",
-                "sha256:fd8a78f46f6b99a67b7ec5cf73f92357891a7b3a40fd97637c27f854aae3b9e0"
+                "sha256:95a6e9398b4967fbcb5fef2acec5efaf9aa4972049d9ae41f95e0972a683fd02",
+                "sha256:e5c3b4ce817b0b328af041506a2a299418c98747c4b1e68cb7527e74ced23efc"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==20.24.2"
+            "version": "==20.24.3"
         },
         "virtualenv-clone": {
             "hashes": [
