@@ -30,6 +30,8 @@
 
 *Our team is small, and our availability will be reduced in the upcoming times. As such, response times might be slower, and we will not be accepting enhancements for this repository moving forward.*
 
+*If you're looking for reliable alternatives, consider using [Cloud Service](https://www.meilisearch.com/pricing?utm_campaign=oss&utm_source=integration&utm_medium=meilisearch-migration). It offers a robust solution for those seeking an alternative to this repository, and also features a crawler for your convenience.*
+
 *Seeking immediate support? Please join us on [our Discord channel](https://discord.meilisearch.com).*
 
 ---
