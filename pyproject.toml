@@ -26,10 +26,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
-    "Scrapy==2.9.0",
+    "Scrapy==2.11.0",
     "selenium==4.10.0",
     "requests-iap==0.2.0",
-    "meilisearch==0.28.1",
+    "meilisearch==0.28.2",
     "requests==2.31.0",
     "python-keycloak-client==0.2.3",
 ]
