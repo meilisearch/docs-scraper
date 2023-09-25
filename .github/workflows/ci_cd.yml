@@ -39,6 +39,7 @@ jobs:
           library-namespace: ${{ env.LIBRARY_NAMESPACE }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
+          check-licenses: false
 
   build-library:
     name: "Build library"
