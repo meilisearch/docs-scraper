@@ -221,7 +221,7 @@ class DefaultStrategy(AbstractStrategy):
     
                 records.append(record)
             except Exception as err:
-                raise Exception(f"URL: {record["url"]}")
+                raise Exception(f"URL: {record['url']}")
 
         return records
 
