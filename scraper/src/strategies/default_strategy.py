@@ -212,15 +212,16 @@ class DefaultStrategy(AbstractStrategy):
             # Example:
             # http://localhost:1314/index.html#pyansys-actions
             cname = os.getenv("DOCUMENTATION_CNAME")
-            if cname is not None:
-                print(record["url"])
-                print(record["url"].split(":"))
-                http, _, port_and_page = record["url"].split(":")
-                port = os.getenv("DOCUMENTATION_PORT")
-                path = port_and_page[len(port):]
-                record['url'] = f"{http}s://{cname}{path}"
-
-            records.append(record)
+            try:
+                if cname is not None:
+                    http, _, port_and_page = record["url"].split(":")
+                    port = os.getenv("DOCUMENTATION_PORT")
+                    path = port_and_page[len(port):]
+                    record['url'] = f"{http}s://{cname}{path}"
+    
+                records.append(record)
+            except Exception as err:
+                raise Exception(f"URL: {record["url"]}")
 
         return records
 
