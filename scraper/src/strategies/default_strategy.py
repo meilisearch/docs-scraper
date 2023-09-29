@@ -217,6 +217,7 @@ class DefaultStrategy(AbstractStrategy):
                 port = os.getenv("DOCUMENTATION_PORT")
                 path = port_and_page[len(port):]
                 record['url'] = f"{http}s://{cname}{path}"
+
             records.append(record)
 
         return records
