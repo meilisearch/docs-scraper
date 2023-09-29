@@ -214,7 +214,7 @@ class DefaultStrategy(AbstractStrategy):
             cname = os.getenv("DOCUMENTATION_CNAME")
             try:
                 if cname is not None:
-                    http, _, port_and_page = record["url"].split(":")
+                    http, _, port_and_page = record["url"].split(":", 2)
                     port = os.getenv("DOCUMENTATION_PORT")
                     path = port_and_page[len(port):]
                     record['url'] = f"{http}s://{cname}{path}"
