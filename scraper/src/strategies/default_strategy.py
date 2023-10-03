@@ -211,12 +211,14 @@ class DefaultStrategy(AbstractStrategy):
             # Replace the localhost and the port with the desired CNAME
             # Example:
             # http://localhost:1314/index.html#pyansys-actions
-            cname = os.getenv("DOCUMENTATION_CNAME")
+            cname = os.getenv("SCRAPER_DOCUMENTATION_CNAME")
             if cname is not None:
-                http, _, port_and_page = record["url"].split(":", 2)
-                port = os.getenv("DOCUMENTATION_PORT")
-                path = port_and_page[len(port):]
-                record['url'] = f"{http}s://{cname}{path}"
+                url = record.get("url")
+                if url:
+                    http, _, port_and_page = url.split(":", 2)
+                    port = os.getenv("SCRAPER_DOCUMENTATION_PORT")
+                    path = port_and_page[len(port):]
+                    record['url'] = f"{http}s://{cname}{path}"
 
             records.append(record)
 

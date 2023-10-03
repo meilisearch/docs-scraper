@@ -42,10 +42,6 @@ Homepage = "https://github.com/ansys/pymeilisearch-scraper"
 Source = "https://github.com/ansys/pymeilisearch-scraper"
 Tracker = "https://github.com/ansys/pymeilisearch-scraper/issues"
 
-[project.entry-points."scraper"]
-scraper = "scraper.__main__:main"
-
-
 [project.optional-dependencies]
 dev = [
     "pytest==7.2.0",
