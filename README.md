@@ -62,6 +62,22 @@ Original documentation follows:
   <a href="https://ms-bors.herokuapp.com/repositories/44"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
 </p>
 
+---
+
+🚨 IMPORTANT NOTICE: Reduced Maintenance & Support 🚨
+
+*Dear Community,*
+
+*We'd like to share some updates regarding the future maintenance of this repository:*
+
+*Our team is small, and our availability will be reduced in the upcoming times. As such, response times might be slower, and we will not be accepting enhancements for this repository moving forward.*
+
+*If you're looking for reliable alternatives, consider using [Cloud Service](https://www.meilisearch.com/pricing?utm_campaign=oss&utm_source=integration&utm_medium=meilisearch-migration). It offers a robust solution for those seeking an alternative to this repository by providing a crawler for your convenience.*
+
+*Seeking immediate support? Please join us on [our Discord channel](https://discord.meilisearch.com).*
+
+---
+
 **docs-scraper** is a scraper for your documentation website that indexes the scraped content into a **Meilisearch** instance.
 
 **Meilisearch** is an open-source search engine. [Discover what Meilisearch is!](https://github.com/meilisearch/meilisearch)
