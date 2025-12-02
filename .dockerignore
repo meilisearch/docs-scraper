@@ -41,7 +41,6 @@ Dockerfile
 
 # Project files
 .editorconfig
-bors.toml
 CONTRIBUTING.md
 README.md
 assets/

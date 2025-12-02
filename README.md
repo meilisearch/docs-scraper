@@ -17,7 +17,6 @@
 <p align="center">
   <a href="https://github.com/meilisearch/docs-scraper/actions"><img src="https://github.com/meilisearch/docs-scraper/workflows/Tests/badge.svg" alt="GitHub Workflow Status"></a>
   <a href="https://github.com/meilisearch/docs-scraper/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational" alt="License"></a>
-  <a href="https://ms-bors.herokuapp.com/repositories/44"><img src="https://bors.tech/images/badge_small.svg" alt="Bors enabled"></a>
 </p>
 
 ---
@@ -545,12 +544,6 @@ Websites that need JavaScript for rendering are passed through ChromeDriver.<br>
 ## 🤖 Compatibility with Meilisearch
 
 This package guarantees compatibility with [version v1.x of Meilisearch](https://github.com/meilisearch/meilisearch/releases/latest), but some features may not be present. Please check the [issues](https://github.com/meilisearch/docs-scraper/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Aenhancement) for more info.
-
-## ⚙️ Development Workflow and Contributing
-
-Any new contribution is more than welcome in this project!
-
-If you want to know more about the development workflow or want to contribute, please visit our [contributing guidelines](/CONTRIBUTING.md) for detailed instructions!
 
 ## Credits
 
