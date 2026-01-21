@@ -63,6 +63,8 @@ class ConfigLoader:
 
     nb_hits_max = 6000000
 
+    relative_url = False
+
     def __init__(self, config):
         data = self._load_config(config)
 

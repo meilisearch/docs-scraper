@@ -66,6 +66,19 @@ class DefaultStrategy(AbstractStrategy):
         if self.dom is None:
             sys.exit('DefaultStrategy.dom is not defined')
 
+        # Convert absolute URL to relative path
+        original_url = current_page_url
+        if self.config.relative_url and original_url:
+            from urllib.parse import urlparse
+            parsed = urlparse(original_url)
+            # Construct a relative path (including path, parameters, and query parameters)
+            relative_url = parsed.path
+            if parsed.params:  # Handle URL parameters (less common)
+                relative_url += ';' + parsed.params
+            if parsed.query:   # Handle query parameters
+                relative_url += '?' + parsed.query
+            current_page_url = relative_url
+
         # Reset it to be able to have a clean instance when testing
         self.global_content = {}
 
